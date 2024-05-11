@@ -1,0 +1,11 @@
+framework module ChipletSDK {
+  umbrella header "ChipletSDK.h"
+  export *
+
+  module * { export * }
+}
+
+module ChipletSDK.Swift {
+  header "ChipletSDK-Swift.h"
+  requires objc
+}
