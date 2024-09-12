@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Rings_iOS_SDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZ7-Vg-3Cn">
+                                <rect key="frame" x="12" y="50" width="85" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="73s-YB-PRW"/>
+                                    <constraint firstAttribute="height" constant="45" id="MkH-cK-o9H"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="开始搜索">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <state key="selected" title="停止搜索"/>
+                                <connections>
+                                    <action selector="startOrStopScanAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LQq-wr-kjl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPI-TM-nMh">
+                                <rect key="frame" x="12" y="125" width="85" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="断开连接">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="disconnectAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="N2L-82-e9o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcM-q9-Edn">
+                                <rect key="frame" x="12" y="200" width="85" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="获取电量">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6GN-bn-1RU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdF-47-RBj">
+                                <rect key="frame" x="12" y="275" width="85" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="充电状态">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YxF-AB-Yj6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="z68-PX-MJg">
+                                <rect key="frame" x="12" y="350" width="85" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="读取所有数据">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="R6L-as-7dY"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3TR-Pr-Kie">
+                                <rect key="frame" x="12" y="425" width="85" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="读取所有未读取过的数据">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rgg-Pl-6Ki"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3P-Np-Ojc">
+                                <rect key="frame" x="12" y="500" width="85" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="实时心率">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Szs-8v-QmF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmU-4H-a3j">
+                                <rect key="frame" x="278" y="50" width="85" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="实时血氧">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hpg-Ip-ouq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqb-QO-wY8">
+                                <rect key="frame" x="278" y="125" width="85" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="心率变异性">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QPx-jl-jge"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNG-C2-GIB">
+                                <rect key="frame" x="278" y="200" width="85" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="体温">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JRq-9I-vfi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGP-m5-Sfh">
+                                <rect key="frame" x="278" y="275" width="85" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="软件版本">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dVE-SD-wRP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQ4-6y-cmU">
+                                <rect key="frame" x="278" y="350" width="85" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="硬件版本">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="RCb-vF-sPX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyd-XI-aDr">
+                                <rect key="frame" x="278" y="425" width="85" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="清除数据">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LFC-EA-9pw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="h5K-3M-6vj">
+                                <rect key="frame" x="278" y="500" width="85" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="恢复出厂设置">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="x7D-yv-Rkd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HCC-g6-EE0">
+                                <rect key="frame" x="271.5" y="575" width="98" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="gUu-dj-BqC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="设置采集周期">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="csm-3H-Vds"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chW-NG-yEx">
+                                <rect key="frame" x="12" y="575" width="85" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Fgz-TF-daX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="OTA">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="438-qk-wJ6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6Kf-t0-JtX">
+                                <rect key="frame" x="138.5" y="575" width="98" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="1kq-sL-pkG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="读取采集周期">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="a1p-1f-jKS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kWi-Et-leF">
+                                <rect key="frame" x="138.5" y="50" width="98" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="zRd-xG-AW8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="读取戒指时间">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="H0f-Ec-mmC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vZi-cT-PQ8">
+                                <rect key="frame" x="138.5" y="200" width="98" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="ok2-NX-3LF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="清除实时步数">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3xM-PA-sRF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wub-cf-3t9">
+                                <rect key="frame" x="138.5" y="125" width="98" height="45"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.78823529410000004" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="gQI-Su-uRc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="获取实时步数">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="v4D-FR-OUH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hmU-4H-a3j" firstAttribute="width" secondItem="YZ7-Vg-3Cn" secondAttribute="width" id="1l6-Bz-N3j"/>
+                            <constraint firstItem="C3P-Np-Ojc" firstAttribute="centerX" secondItem="YZ7-Vg-3Cn" secondAttribute="centerX" id="1ob-85-Xhr"/>
+                            <constraint firstItem="HCC-g6-EE0" firstAttribute="centerX" secondItem="h5K-3M-6vj" secondAttribute="centerX" id="4K1-1A-XOv"/>
+                            <constraint firstItem="Xyd-XI-aDr" firstAttribute="height" secondItem="YZ7-Vg-3Cn" secondAttribute="height" id="5vA-Wl-kcD"/>
+                            <constraint firstItem="z68-PX-MJg" firstAttribute="height" secondItem="YZ7-Vg-3Cn" secondAttribute="height" id="75R-mz-iS5"/>
+                            <constraint firstItem="hmU-4H-a3j" firstAttribute="centerX" secondItem="gqb-QO-wY8" secondAttribute="centerX" id="7KM-F6-SFm"/>
+                            <constraint firstItem="3TR-Pr-Kie" firstAttribute="top" secondItem="z68-PX-MJg" secondAttribute="bottom" constant="30" id="7Ut-YA-xcx"/>
+                            <constraint firstItem="YZ7-Vg-3Cn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="12" id="7oN-c7-VVw"/>
+                            <constraint firstItem="3TR-Pr-Kie" firstAttribute="centerX" secondItem="YZ7-Vg-3Cn" secondAttribute="centerX" id="7y2-wM-5xZ"/>
+                            <constraint firstItem="gdF-47-RBj" firstAttribute="centerX" secondItem="YZ7-Vg-3Cn" secondAttribute="centerX" id="80A-mr-hCD"/>
+                            <constraint firstItem="DNG-C2-GIB" firstAttribute="top" secondItem="gqb-QO-wY8" secondAttribute="bottom" constant="30" id="8I2-a6-jPu"/>
+                            <constraint firstItem="iGP-m5-Sfh" firstAttribute="top" secondItem="DNG-C2-GIB" secondAttribute="bottom" constant="30" id="8Ip-7c-mpp"/>
+                            <constraint firstItem="dQ4-6y-cmU" firstAttribute="width" secondItem="YZ7-Vg-3Cn" secondAttribute="width" id="9Yw-ly-rbD"/>
+                            <constraint firstItem="h5K-3M-6vj" firstAttribute="top" secondItem="Xyd-XI-aDr" secondAttribute="bottom" constant="30" id="9fx-vW-CZD"/>
+                            <constraint firstItem="kWi-Et-leF" firstAttribute="top" secondItem="YZ7-Vg-3Cn" secondAttribute="top" id="9r7-gf-wec"/>
+                            <constraint firstItem="vZi-cT-PQ8" firstAttribute="top" secondItem="HcM-q9-Edn" secondAttribute="top" id="AoU-tB-AS1"/>
+                            <constraint firstItem="DNG-C2-GIB" firstAttribute="width" secondItem="YZ7-Vg-3Cn" secondAttribute="width" id="B1a-n9-uAs"/>
+                            <constraint firstItem="gdF-47-RBj" firstAttribute="top" secondItem="HcM-q9-Edn" secondAttribute="bottom" constant="30" id="BFU-BO-R9q"/>
+                            <constraint firstItem="gqb-QO-wY8" firstAttribute="height" secondItem="YZ7-Vg-3Cn" secondAttribute="height" id="BLq-n1-Czg"/>
+                            <constraint firstItem="3TR-Pr-Kie" firstAttribute="height" secondItem="YZ7-Vg-3Cn" secondAttribute="height" id="DLh-xO-Nrd"/>
+                            <constraint firstItem="C3P-Np-Ojc" firstAttribute="height" secondItem="YZ7-Vg-3Cn" secondAttribute="height" id="FRc-Ed-rke"/>
+                            <constraint firstItem="dQ4-6y-cmU" firstAttribute="centerX" secondItem="gqb-QO-wY8" secondAttribute="centerX" id="GIa-qy-emH"/>
+                            <constraint firstItem="DNG-C2-GIB" firstAttribute="height" secondItem="YZ7-Vg-3Cn" secondAttribute="height" id="GnH-bP-1ah"/>
+                            <constraint firstItem="chW-NG-yEx" firstAttribute="trailing" secondItem="C3P-Np-Ojc" secondAttribute="trailing" id="Gxz-w3-emE"/>
+                            <constraint firstItem="HcM-q9-Edn" firstAttribute="width" secondItem="YZ7-Vg-3Cn" secondAttribute="width" id="H73-hn-aaf"/>
+                            <constraint firstItem="gdF-47-RBj" firstAttribute="width" secondItem="YZ7-Vg-3Cn" secondAttribute="width" id="HXY-Sh-aol"/>
+                            <constraint firstItem="gqb-QO-wY8" firstAttribute="width" secondItem="YZ7-Vg-3Cn" secondAttribute="width" id="HzR-Cq-hu2"/>
+                            <constraint firstItem="nPI-TM-nMh" firstAttribute="width" secondItem="YZ7-Vg-3Cn" secondAttribute="width" id="JYb-CB-W5A"/>
+                            <constraint firstItem="wub-cf-3t9" firstAttribute="top" secondItem="nPI-TM-nMh" secondAttribute="top" id="KCX-dr-1AN"/>
+                            <constraint firstItem="nPI-TM-nMh" firstAttribute="top" secondItem="YZ7-Vg-3Cn" secondAttribute="bottom" constant="30" id="LKK-rL-phu"/>
+                            <constraint firstItem="gdF-47-RBj" firstAttribute="height" secondItem="YZ7-Vg-3Cn" secondAttribute="height" id="PPV-dD-8W0"/>
+                            <constraint firstItem="YZ7-Vg-3Cn" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="30" id="QSh-dW-GpJ"/>
+                            <constraint firstItem="hmU-4H-a3j" firstAttribute="height" secondItem="YZ7-Vg-3Cn" secondAttribute="height" id="Qjj-g8-qmg"/>
+                            <constraint firstItem="C3P-Np-Ojc" firstAttribute="width" secondItem="YZ7-Vg-3Cn" secondAttribute="width" id="S7a-5Z-5bA"/>
+                            <constraint firstItem="kWi-Et-leF" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="TEt-C2-EwJ"/>
+                            <constraint firstItem="dQ4-6y-cmU" firstAttribute="top" secondItem="iGP-m5-Sfh" secondAttribute="bottom" constant="30" id="UA9-Yj-FR5"/>
+                            <constraint firstItem="z68-PX-MJg" firstAttribute="top" secondItem="gdF-47-RBj" secondAttribute="bottom" constant="30" id="Uky-88-ZKQ"/>
+                            <constraint firstItem="iGP-m5-Sfh" firstAttribute="centerX" secondItem="gqb-QO-wY8" secondAttribute="centerX" id="UzH-Uq-tKb"/>
+                            <constraint firstItem="chW-NG-yEx" firstAttribute="top" secondItem="C3P-Np-Ojc" secondAttribute="bottom" constant="30" id="VDG-j9-qe0"/>
+                            <constraint firstItem="chW-NG-yEx" firstAttribute="leading" secondItem="C3P-Np-Ojc" secondAttribute="leading" id="W1y-xd-eCA"/>
+                            <constraint firstItem="6Kf-t0-JtX" firstAttribute="top" secondItem="HCC-g6-EE0" secondAttribute="top" id="W9T-ca-2yy"/>
+                            <constraint firstItem="h5K-3M-6vj" firstAttribute="width" secondItem="YZ7-Vg-3Cn" secondAttribute="width" id="WeM-p7-cba"/>
+                            <constraint firstItem="Xyd-XI-aDr" firstAttribute="top" secondItem="dQ4-6y-cmU" secondAttribute="bottom" constant="30" id="X5C-9y-z5M"/>
+                            <constraint firstItem="wub-cf-3t9" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="XFq-nJ-AbQ"/>
+                            <constraint firstItem="Xyd-XI-aDr" firstAttribute="centerX" secondItem="gqb-QO-wY8" secondAttribute="centerX" id="Yuf-dk-vbH"/>
+                            <constraint firstItem="3TR-Pr-Kie" firstAttribute="width" secondItem="YZ7-Vg-3Cn" secondAttribute="width" id="aaQ-bj-Ld5"/>
+                            <constraint firstItem="z68-PX-MJg" firstAttribute="centerX" secondItem="YZ7-Vg-3Cn" secondAttribute="centerX" id="afb-7h-pcz"/>
+                            <constraint firstItem="HcM-q9-Edn" firstAttribute="centerX" secondItem="YZ7-Vg-3Cn" secondAttribute="centerX" id="b2K-3E-LEV"/>
+                            <constraint firstItem="h5K-3M-6vj" firstAttribute="centerX" secondItem="gqb-QO-wY8" secondAttribute="centerX" id="cZP-ie-z3e"/>
+                            <constraint firstItem="h5K-3M-6vj" firstAttribute="height" secondItem="YZ7-Vg-3Cn" secondAttribute="height" id="dwH-mM-dQ2"/>
+                            <constraint firstItem="dQ4-6y-cmU" firstAttribute="height" secondItem="YZ7-Vg-3Cn" secondAttribute="height" id="f3u-yF-TBm"/>
+                            <constraint firstItem="nPI-TM-nMh" firstAttribute="centerX" secondItem="YZ7-Vg-3Cn" secondAttribute="centerX" id="f5f-If-xgn"/>
+                            <constraint firstItem="6Kf-t0-JtX" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="fhQ-EB-6UL"/>
+                            <constraint firstItem="hmU-4H-a3j" firstAttribute="top" secondItem="YZ7-Vg-3Cn" secondAttribute="top" id="g8R-wa-TUq"/>
+                            <constraint firstItem="gqb-QO-wY8" firstAttribute="top" secondItem="hmU-4H-a3j" secondAttribute="bottom" constant="30" id="gfZ-k5-7V7"/>
+                            <constraint firstItem="HCC-g6-EE0" firstAttribute="top" secondItem="h5K-3M-6vj" secondAttribute="bottom" constant="30" id="hCF-Lk-K7H"/>
+                            <constraint firstItem="iGP-m5-Sfh" firstAttribute="width" secondItem="YZ7-Vg-3Cn" secondAttribute="width" id="jDF-Qy-2xW"/>
+                            <constraint firstItem="vZi-cT-PQ8" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="n2c-Fj-h5f"/>
+                            <constraint firstItem="iGP-m5-Sfh" firstAttribute="height" secondItem="YZ7-Vg-3Cn" secondAttribute="height" id="orn-NM-dsh"/>
+                            <constraint firstItem="HcM-q9-Edn" firstAttribute="height" secondItem="YZ7-Vg-3Cn" secondAttribute="height" id="qUS-Pi-ipz"/>
+                            <constraint firstAttribute="trailing" secondItem="hmU-4H-a3j" secondAttribute="trailing" constant="12" id="r1V-I9-7Or"/>
+                            <constraint firstItem="z68-PX-MJg" firstAttribute="width" secondItem="YZ7-Vg-3Cn" secondAttribute="width" id="r9e-jk-YKe"/>
+                            <constraint firstItem="HcM-q9-Edn" firstAttribute="top" secondItem="nPI-TM-nMh" secondAttribute="bottom" constant="30" id="rTc-D6-5mY"/>
+                            <constraint firstItem="C3P-Np-Ojc" firstAttribute="top" secondItem="3TR-Pr-Kie" secondAttribute="bottom" constant="30" id="uMS-Mc-sDN"/>
+                            <constraint firstItem="nPI-TM-nMh" firstAttribute="height" secondItem="YZ7-Vg-3Cn" secondAttribute="height" id="wPi-ze-Vg3"/>
+                            <constraint firstItem="DNG-C2-GIB" firstAttribute="centerX" secondItem="gqb-QO-wY8" secondAttribute="centerX" id="wcQ-VU-EXQ"/>
+                            <constraint firstItem="Xyd-XI-aDr" firstAttribute="width" secondItem="YZ7-Vg-3Cn" secondAttribute="width" id="zVw-Ah-D9D"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="175" y="-69"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
