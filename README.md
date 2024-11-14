@@ -1,5 +1,6 @@
 # ChipletRing-SDK-iOS
-
+##遇到问题可以在Issues上提问
+##If you have any questions, you can ask them on Issues
 
 ## 说明（About The Project）
 
