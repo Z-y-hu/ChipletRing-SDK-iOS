@@ -1,0 +1,15 @@
+use_frameworks!
+
+platform :ios, '13.0'
+
+target 'Rings-SDK_Example' do
+#  pod 'Rings-SDK', :path => '../'
+  pod 'QMUIKit','4.6.3'
+  pod 'RxSwift'
+  pod 'RxRelay'
+  target 'Rings-SDK_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
