@@ -27,7 +27,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/Z-y-hu/ChipletRing-SDK-iOS.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '13.0'
-  s.source_files = 'SDK&Demo/Rings-SDK/Rings-SDK/Classes/*'
+  s.source_files = 'SDK%26Demo/Rings-SDK/Rings-SDK/Classes/*'
 
-  s.vendored_frameworks = 'SDK&Demo/Rings-SDK/RingsSDK.framework'
+  s.vendored_frameworks = 'SDK%26Demo/Rings-SDK/RingsSDK.framework'
+  s.requires_arc     = true
 end
