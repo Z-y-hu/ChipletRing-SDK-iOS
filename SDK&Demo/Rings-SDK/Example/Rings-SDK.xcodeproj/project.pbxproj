@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		04DC9B972C00CED80075C81F /* RingsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DC9B952C00CED80075C81F /* RingsSDK.framework */; };
-		160777A12CE6177A009B18CA /* 2.4.8.6Z3K.hex16 in Resources */ = {isa = PBXBuildFile; fileRef = 160777A02CE6177A009B18CA /* 2.4.8.6Z3K.hex16 */; };
 		160E4AE92CDDD43C0043F005 /* 2.4.4.81.hex16 in Resources */ = {isa = PBXBuildFile; fileRef = 160E4AE82CDDD43C0043F005 /* 2.4.4.81.hex16 */; };
 		16C4E13F2CDF493E00312256 /* area.json in Resources */ = {isa = PBXBuildFile; fileRef = 16C4E13E2CDF493E00312256 /* area.json */; };
-		16DF7A5E2CDB650900D633C9 /* OTA_test.hex16 in Resources */ = {isa = PBXBuildFile; fileRef = 16DF7A5D2CDB650900D633C9 /* OTA_test.hex16 */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -19,7 +17,6 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		77B0D71B79E934817835EF6B /* Pods_Rings_SDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE80AD4EC33C33678F752C4 /* Pods_Rings_SDK_Tests.framework */; };
-		A74190282AD06B6200C2D6EE /* 2.3.7.511S.hex16 in Resources */ = {isa = PBXBuildFile; fileRef = A74190272AD06B6200C2D6EE /* 2.3.7.511S.hex16 */; };
 		C41A78EF3C7B4C8E529696B0 /* Pods_Rings_SDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375D377B37942136CD1F64B4 /* Pods_Rings_SDK_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,10 +46,8 @@
 /* Begin PBXFileReference section */
 		04DC9B952C00CED80075C81F /* RingsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RingsSDK.framework; path = "Rings-SDK/RingsSDK.framework"; sourceTree = "<group>"; };
 		0FB9D02ABEFE842A53535B0F /* Pods-Rings-SDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Tests/Pods-Rings-SDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		160777A02CE6177A009B18CA /* 2.4.8.6Z3K.hex16 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2.4.8.6Z3K.hex16; sourceTree = "<group>"; };
 		160E4AE82CDDD43C0043F005 /* 2.4.4.81.hex16 */ = {isa = PBXFileReference; lastKnownFileType = text; path = 2.4.4.81.hex16; sourceTree = "<group>"; };
 		16C4E13E2CDF493E00312256 /* area.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = area.json; sourceTree = "<group>"; };
-		16DF7A5D2CDB650900D633C9 /* OTA_test.hex16 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OTA_test.hex16; sourceTree = "<group>"; };
 		20B886E668C3114766A7D24B /* Pods-Rings-SDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Tests.release.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Tests/Pods-Rings-SDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		375D377B37942136CD1F64B4 /* Pods_Rings_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rings_SDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EC66C71719A08E370D3E32C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -70,7 +65,6 @@
 		7403D95A48787E24BBA89C66 /* Pods-Rings-SDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Example/Pods-Rings-SDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7D7B6770540E1FB126C45716 /* Pods-Rings-SDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Example.release.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Example/Pods-Rings-SDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A60793C4CDF2994C9B4E7A23 /* Rings-SDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "Rings-SDK.podspec"; path = "../Rings-SDK.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A74190272AD06B6200C2D6EE /* 2.3.7.511S.hex16 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2.3.7.511S.hex16; sourceTree = "<group>"; };
 		BBE80AD4EC33C33678F752C4 /* Pods_Rings_SDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rings_SDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				160E4AE82CDDD43C0043F005 /* 2.4.4.81.hex16 */,
-				160777A02CE6177A009B18CA /* 2.4.8.6Z3K.hex16 */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for Rings-SDK */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -121,11 +114,9 @@
 		607FACD21AFB9204008FA782 /* Example for Rings-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				16DF7A5D2CDB650900D633C9 /* OTA_test.hex16 */,
 				16C4E13E2CDF493E00312256 /* area.json */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				A74190272AD06B6200C2D6EE /* 2.3.7.511S.hex16 */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -283,11 +274,8 @@
 			files = (
 				160E4AE92CDDD43C0043F005 /* 2.4.4.81.hex16 in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				16DF7A5E2CDB650900D633C9 /* OTA_test.hex16 in Resources */,
 				16C4E13F2CDF493E00312256 /* area.json in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				160777A12CE6177A009B18CA /* 2.4.8.6Z3K.hex16 in Resources */,
-				A74190282AD06B6200C2D6EE /* 2.3.7.511S.hex16 in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
