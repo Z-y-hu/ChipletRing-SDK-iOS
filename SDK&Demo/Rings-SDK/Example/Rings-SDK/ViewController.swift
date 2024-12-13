@@ -31,18 +31,20 @@ class ViewController: UIViewController {
             RingManager.shared.startScan { [self] devices in
                 BDLogger.info("设备列表 =========>\(String(describing: devices))")
                 if let devices = devices{
-//                    let macTarget = "E7:C4:4D:8F:B9:A7"
-//                    let macTarget = "12:34:56:46:54:65"
-//                    let macTarget = "C0:00:00:00:00:30"
-                   // let macTarget = "B2:20:11:00:00:C6"
-                    let macTarget="B0:02:30:00:03:E1"
-                    //"B0:02:30:00:00:07"
-//                    let macTarget = "B0:02:B0:00:01:E1"
+                    //  B5:6A
+//                    let macTarget = "EB:37:86:AC:B5:6A"
+                    //  白色戒指
+//                    let macTarget = "15:12:03:00:02:00"
+//                    //  蓝色戒指
+//                    let macTarget = "B0:02:30:00:03:3B"
+                    //  单电机戒指
+                    let macTarget = "B0:04:70:00:00:0B"
+                    
                     for device in devices{
                         var macString = ""
                         if let macData = device.advertisementData["kCBAdvDataManufacturerData"] as? Data,macData.count >= 8 {
                             macString = String(format: "%02X:%02X:%02X:%02X:%02X:%02X", macData[7],macData[6],macData[5],macData[4],macData[3],macData[2])
-//                                print("扫描到的蓝牙mac:\(macString)")
+                                print("扫描到的蓝牙mac:\(macString)")
                         }
                         if macString == macTarget{
                             self.connectDevice(device: device)

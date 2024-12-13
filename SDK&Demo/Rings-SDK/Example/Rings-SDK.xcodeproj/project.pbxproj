@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04DC9B972C00CED80075C81F /* RingsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DC9B952C00CED80075C81F /* RingsSDK.framework */; };
 		160E4AE92CDDD43C0043F005 /* 2.4.4.81.hex16 in Resources */ = {isa = PBXBuildFile; fileRef = 160E4AE82CDDD43C0043F005 /* 2.4.4.81.hex16 */; };
 		16C4E13F2CDF493E00312256 /* area.json in Resources */ = {isa = PBXBuildFile; fileRef = 16C4E13E2CDF493E00312256 /* area.json */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -44,7 +43,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		04DC9B952C00CED80075C81F /* RingsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RingsSDK.framework; path = "Rings-SDK/RingsSDK.framework"; sourceTree = "<group>"; };
 		0FB9D02ABEFE842A53535B0F /* Pods-Rings-SDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Tests/Pods-Rings-SDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		160E4AE82CDDD43C0043F005 /* 2.4.4.81.hex16 */ = {isa = PBXFileReference; lastKnownFileType = text; path = 2.4.4.81.hex16; sourceTree = "<group>"; };
 		16C4E13E2CDF493E00312256 /* area.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = area.json; sourceTree = "<group>"; };
@@ -66,6 +64,7 @@
 		7D7B6770540E1FB126C45716 /* Pods-Rings-SDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Example.release.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Example/Pods-Rings-SDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A60793C4CDF2994C9B4E7A23 /* Rings-SDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "Rings-SDK.podspec"; path = "../Rings-SDK.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BBE80AD4EC33C33678F752C4 /* Pods_Rings_SDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rings_SDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD34068D2D0BFCF400A49894 /* RingsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RingsSDK.framework; path = ../RingsSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04DC9B972C00CED80075C81F /* RingsSDK.framework in Frameworks */,
 				C41A78EF3C7B4C8E529696B0 /* Pods_Rings_SDK_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,7 +162,7 @@
 		886517D6601365650BF5FEDA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				04DC9B952C00CED80075C81F /* RingsSDK.framework */,
+				FD34068D2D0BFCF400A49894 /* RingsSDK.framework */,
 				BBE80AD4EC33C33678F752C4 /* Pods_Rings_SDK_Tests.framework */,
 				375D377B37942136CD1F64B4 /* Pods_Rings_SDK_Example.framework */,
 			);
