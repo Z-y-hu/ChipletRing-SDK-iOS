@@ -1,4 +1,7 @@
 PODS:
+  - LookinServer/Core (1.2.8)
+  - LookinServer/Swift (1.2.8):
+    - LookinServer/Core
   - QMUIKit (4.8.0):
     - QMUIKit/QMUIComponents (= 4.8.0)
     - QMUIKit/QMUICore (= 4.8.0)
@@ -320,21 +323,24 @@ PODS:
   - RxSwift (6.7.1)
 
 DEPENDENCIES:
+  - LookinServer/Swift
   - QMUIKit (= 4.8.0)
   - RxRelay
   - RxSwift
 
 SPEC REPOS:
   trunk:
+    - LookinServer
     - QMUIKit
     - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
+  LookinServer: 1b2b61c6402ae29fa22182d48f5cd067b4e99e80
   QMUIKit: 3c622fe3c55c0dccfad750634bd9ee5e7ade9a53
   RxRelay: 4151ba01152436b08271e08410135e099880eae5
   RxSwift: b9a93a26031785159e11abd40d1a55bcb8057e52
 
-PODFILE CHECKSUM: 74e3cf5a0ebfb05ad22a67455991d0871aa106d9
+PODFILE CHECKSUM: e82428ff911038021564fcc4b52d5753f233ff47
 
 COCOAPODS: 1.16.2

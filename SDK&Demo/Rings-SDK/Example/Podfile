@@ -4,6 +4,7 @@ platform :ios, '13.0'
 
 target 'Rings-SDK_Example' do
 #  pod 'Rings-SDK', :path => '../'
+  pod 'LookinServer', :subspecs => ['Swift'], :configurations => ['Debug']
   pod 'QMUIKit','4.8.0'
   pod 'RxSwift'
   pod 'RxRelay'
