@@ -10,7 +10,6 @@ import RingsSDK
 import UIKit
 class LogVC: UIViewController {
     @IBOutlet var log_TV: UITextView!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // 清除当天已有日志
@@ -23,17 +22,26 @@ class LogVC: UIViewController {
         readLog()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+
     //  读取日志内容
     func readLog() {
         // 每秒读取一次日志
-        _ = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { _ in
-            if let logContent = self.readLogContent() {
-                if self.log_TV.text == logContent {
+        _ = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [weak self] _ in
+            guard let logTextView = self?.log_TV else {
+                print("⚠️ log_TV 未正确初始化")
+                return
+            }
+
+            if let logContent = self?.readLogContent() {
+                if logTextView.text == logContent {
                     return
                 }
-                self.log_TV.text = logContent
+                logTextView.text = logContent
                 DispatchQueue.main.async {
-                    self.log_TV.scrollRangeToVisible(NSMakeRange(self.log_TV.text.count - 1, 1))
+                    logTextView.scrollRangeToVisible(NSMakeRange(logTextView.text.count - 1, 1))
                 }
             } else {
                 print("⚠️ 未能读取到日志内容")
@@ -65,7 +73,7 @@ extension LogVC {
         // 检查文件是否存在
         guard FileManager.default.fileExists(atPath: logFileURL.path) else {
             print("⚠️ 日志文件不存在: \(logFileURL.path)")
-            return nil
+            return ""
         }
 
         do {
@@ -74,7 +82,7 @@ extension LogVC {
             return content
         } catch {
             print("⚠️ 读取日志文件出错: \(error)")
-            return nil
+            return ""
         }
     }
 

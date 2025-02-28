@@ -14,11 +14,16 @@ class TestVC: UIViewController {
     var deviceMac = ""
     @IBOutlet var log_Btn: UIButton!
     var logVC = LogVC()
+
+    // 固件下载保存本地路径
+    var filePathUrl: URL?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         if let log_VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogVC_ID") as? LogVC {
             logVC = log_VC
-            log_VC.readLogContent()
+            present(logVC, animated: true, completion: nil)
         }
 
         RingManager.shared.connectStateChangeBlock = { state in
@@ -366,6 +371,119 @@ class TestVC: UIViewController {
                     BDLogger.info("成功=====>\(success)")
                 case let .failure(failure):
                     BDLogger.info("失败=====>\(failure)")
+                }
+            }
+            break
+
+        case 1021:
+            BDLogger.info("=========>获取SDK Token")
+            RingNetworkManager.shared.createToken(apiKey: "APIKey", userIdentifier: "用户唯一标识") { result in
+                switch result {
+                case let .success(token):
+                    BDLogger.info("✅ Token获取成功：")
+                    BDLogger.info("- Token: \(token)")
+                case let .failure(error):
+                    BDLogger.error("❌ Token获取失败：")
+                    // 根据不同错误类型显示不同的错误信息
+                    let errorMessage: String
+                    switch error {
+                    case .invalidParameters:
+                        BDLogger.error("❌ 参数无效，请检查API Key和用户ID")
+                    case let .httpError(code):
+                        BDLogger.error("❌ HTTP错误：\(code)")
+                    case let .serverError(code, message):
+                        BDLogger.error("❌ 服务器错误[\(code)]: \(message)")
+                    case .invalidResponse:
+                        BDLogger.error("❌ 响应数据无效")
+                    case .decodingError:
+                        BDLogger.error("❌ 数据解析失败")
+                    case let .networkError(message):
+                        BDLogger.error("❌ 网络错误: \(message)")
+                    case .tokenError:
+                        BDLogger.error("❌ Token异常")
+                    }
+                }
+            }
+            break
+        case 1022:
+            // 7.1.5.3Z3R / 7.1.7.0Z3R
+            BDLogger.info("=========>检查固件版本")
+            RingNetworkManager.shared.checkDeviceVersion(version: "7.1.7.0Z3R") { result in
+                switch result {
+                case let .success(versionInfo):
+                    if versionInfo.hasNewVersion {
+                        BDLogger.info("""
+                        ✅ 发现新版本：
+                        - 版本号：\(versionInfo.version ?? "")
+                        - 下载地址：\(versionInfo.downloadUrl ?? "")
+                        - 文件名：\(versionInfo.fileName ?? "")
+                        """)
+                    } else {
+                        BDLogger.info("✅ 当前已是最新版本")
+                    }
+                    BDLogger.info("📝 消息：\(versionInfo.message)")
+                case let .failure(error):
+                    switch error {
+                    case .invalidParameters:
+                        BDLogger.error("❌ 参数无效，请检查版本号格式")
+                    case let .httpError(code):
+                        BDLogger.error("❌ HTTP请求失败：状态码 \(code)")
+                    case let .serverError(code, message):
+                        BDLogger.error("❌ 服务器错误：[\(code)] \(message)")
+                    case .invalidResponse:
+                        BDLogger.error("❌ 响应数据无效")
+                    case let .decodingError(error):
+                        BDLogger.error("❌ 数据解析失败：\(error.localizedDescription)")
+                    case let .networkError(message):
+                        BDLogger.error("❌ 网络错误：\(message)")
+                    case .tokenError:
+                        BDLogger.error("❌ Token异常")
+                    }
+                }
+            }
+            break
+        case 1023:
+            BDLogger.info("=========>固件下载")
+            // fileName:7.1.7.0Z3R.bin
+            // downloadUrl:https://image.lmyiot.com/FiaeMmw7OwXNwtKWoaQM2HsNhi4z
+            // documentDirectory
+            let destinationPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+            RingNetworkManager.shared.downloadFile(url: "https://image.lmyiot.com/FiaeMmw7OwXNwtKWoaQM2HsNhi4z", fileName: "7.1.7.0Z3R.bin", destinationPath: destinationPath, progress: { progress in
+                BDLogger.info("进度 =====>\(progress)")
+            }, completion: { result in
+                switch result {
+                case let .success(filePathUrl):
+                    BDLogger.info("固件已保存到 =====>\(filePathUrl)")
+                    self.filePathUrl = URL(fileURLWithPath: filePathUrl)
+                case let .failure(error):
+                    BDLogger.error("固件下载失败 =====>\(error)")
+                }
+            })
+            break
+        case 1024:
+            BDLogger.info("=========>升级固件")
+            guard let fileUrl = filePathUrl else {
+                BDLogger.info("请先下载固件")
+                return
+            }
+
+            //  开始阿波罗升级
+            RingManager.shared.startApolloOTA(fileUrl: fileUrl) { status in
+                switch status {
+                case .preparing:
+                    BDLogger.info("OTA: 准备开始升级...")
+                case let .progress(progress):
+                    let percentage = Int(progress * 100)
+                    BDLogger.info("OTA: 升级进度 \(percentage)%")
+                case .success:
+                    BDLogger.info("OTA: 固件传输成功")
+                // 传输成功后自动验证并重启
+                case let .error(message, code):
+                    BDLogger.error("OTA: 升级失败 - \(message) (错误码: \(code))")
+                case .rebootSuccess:
+                    BDLogger.info("OTA: 设备重启成功")
+                case .rebootFailed:
+                    BDLogger.error("OTA: 设备重启失败")
                 }
             }
             break

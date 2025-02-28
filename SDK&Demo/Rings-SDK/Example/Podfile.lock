@@ -1,7 +1,12 @@
 PODS:
+  - Alamofire (5.10.2)
   - LookinServer/Core (1.2.8)
   - LookinServer/Swift (1.2.8):
     - LookinServer/Core
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
   - QMUIKit (4.8.0):
     - QMUIKit/QMUIComponents (= 4.8.0)
     - QMUIKit/QMUICore (= 4.8.0)
@@ -318,29 +323,38 @@ PODS:
     - QMUIKit/QMUILog
   - QMUIKit/QMUIResources (4.8.0)
   - QMUIKit/QMUIWeakObjectContainer (4.8.0)
-  - RxRelay (6.7.1):
-    - RxSwift (= 6.7.1)
-  - RxSwift (6.7.1)
+  - RxRelay (6.8.0):
+    - RxSwift (= 6.8.0)
+  - RxSwift (6.8.0)
+  - SwiftyJSON (5.0.2)
 
 DEPENDENCIES:
   - LookinServer/Swift
+  - Moya (~> 15.0.0)
   - QMUIKit (= 4.8.0)
-  - RxRelay
-  - RxSwift
+  - RxRelay (~> 6.8.0)
+  - RxSwift (~> 6.8.0)
+  - SwiftyJSON (~> 5.0.2)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - LookinServer
+    - Moya
     - QMUIKit
     - RxRelay
     - RxSwift
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
   LookinServer: 1b2b61c6402ae29fa22182d48f5cd067b4e99e80
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   QMUIKit: 3c622fe3c55c0dccfad750634bd9ee5e7ade9a53
-  RxRelay: 4151ba01152436b08271e08410135e099880eae5
-  RxSwift: b9a93a26031785159e11abd40d1a55bcb8057e52
+  RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
+  RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
+  SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
 
-PODFILE CHECKSUM: e82428ff911038021564fcc4b52d5753f233ff47
+PODFILE CHECKSUM: 6d44feefce0586d57668a643907600586d53b050
 
 COCOAPODS: 1.16.2

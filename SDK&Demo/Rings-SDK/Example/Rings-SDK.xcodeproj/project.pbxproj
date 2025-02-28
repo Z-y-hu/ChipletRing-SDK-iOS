@@ -16,12 +16,14 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		77B0D71B79E934817835EF6B /* Pods_Rings_SDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE80AD4EC33C33678F752C4 /* Pods_Rings_SDK_Tests.framework */; };
+		80552E6B8BD2DF801DB62FAA /* Pods_Rings_SDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0E48D74D68BAE2E6A872C5 /* Pods_Rings_SDK_Example.framework */; };
+		A714ABABB26ED2AFB9CBD00B /* Pods_Rings_SDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAE90CD5AE3EFA2778F2E13 /* Pods_Rings_SDK_Tests.framework */; };
 		A74190282AD06B6200C2D6EE /* 2.3.7.511S.hex16 in Resources */ = {isa = PBXBuildFile; fileRef = A74190272AD06B6200C2D6EE /* 2.3.7.511S.hex16 */; };
-		C41A78EF3C7B4C8E529696B0 /* Pods_Rings_SDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375D377B37942136CD1F64B4 /* Pods_Rings_SDK_Example.framework */; };
 		FD3E74C42D662D64008EF331 /* LogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E74C32D662D64008EF331 /* LogVC.swift */; };
-		FD6685D12D5715DE0074525C /* RingsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6685D02D5715DE0074525C /* RingsSDK.framework */; };
-		FD6685D22D5715DE0074525C /* RingsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD6685D02D5715DE0074525C /* RingsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD86C88B2D71B8E500E8E375 /* amOtaApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD86C88A2D71B8E500E8E375 /* amOtaApi.framework */; };
+		FD86C88C2D71B8E500E8E375 /* amOtaApi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD86C88A2D71B8E500E8E375 /* amOtaApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD86C88F2D71B8ED00E8E375 /* RingsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD86C88E2D71B8ED00E8E375 /* RingsSDK.framework */; };
+		FD86C8902D71B8ED00E8E375 /* RingsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD86C88E2D71B8ED00E8E375 /* RingsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDA3E9B52D30C5AB00FCCF54 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA3E9B42D30C5AB00FCCF54 /* TestVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,13 +48,14 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FD7A8FF42D5613C7006D2F3C /* Embed Frameworks */ = {
+		FD86C88D2D71B8E500E8E375 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FD6685D22D5715DE0074525C /* RingsSDK.framework in Embed Frameworks */,
+				FD86C88C2D71B8E500E8E375 /* amOtaApi.framework in Embed Frameworks */,
+				FD86C8902D71B8ED00E8E375 /* RingsSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,13 +63,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0FB9D02ABEFE842A53535B0F /* Pods-Rings-SDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Tests/Pods-Rings-SDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		160777A02CE6177A009B18CA /* 2.4.8.6Z3K.hex16 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2.4.8.6Z3K.hex16; sourceTree = "<group>"; };
 		160E4AE82CDDD43C0043F005 /* 2.4.4.81.hex16 */ = {isa = PBXFileReference; lastKnownFileType = text; path = 2.4.4.81.hex16; sourceTree = "<group>"; };
 		16C4E13E2CDF493E00312256 /* area.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = area.json; sourceTree = "<group>"; };
 		16DF7A5D2CDB650900D633C9 /* OTA_test.hex16 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OTA_test.hex16; sourceTree = "<group>"; };
-		20B886E668C3114766A7D24B /* Pods-Rings-SDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Tests.release.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Tests/Pods-Rings-SDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		375D377B37942136CD1F64B4 /* Pods_Rings_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rings_SDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		270656B95DFFF3F287F9C80E /* Pods-Rings-SDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Tests.release.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Tests/Pods-Rings-SDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		2CAE90CD5AE3EFA2778F2E13 /* Pods_Rings_SDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rings_SDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F0E48D74D68BAE2E6A872C5 /* Pods_Rings_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rings_SDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EC66C71719A08E370D3E32C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Rings-SDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rings-SDK_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,14 +81,22 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		73F115EE09D1327773E70F38 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		7403D95A48787E24BBA89C66 /* Pods-Rings-SDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Example/Pods-Rings-SDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		7D7B6770540E1FB126C45716 /* Pods-Rings-SDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Example.release.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Example/Pods-Rings-SDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A60793C4CDF2994C9B4E7A23 /* Rings-SDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "Rings-SDK.podspec"; path = "../Rings-SDK.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A74190272AD06B6200C2D6EE /* 2.3.7.511S.hex16 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2.3.7.511S.hex16; sourceTree = "<group>"; };
-		BBE80AD4EC33C33678F752C4 /* Pods_Rings_SDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rings_SDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4F3910E586571DCF9CE4F17 /* Pods-Rings-SDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Example.release.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Example/Pods-Rings-SDK_Example.release.xcconfig"; sourceTree = "<group>"; };
+		DA655DD45B87673D35AEAB10 /* Pods-Rings-SDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Example/Pods-Rings-SDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F6CB2AFA57F5AADC000515C0 /* Pods-Rings-SDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Tests/Pods-Rings-SDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD03058F2D6F031E004A2655 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0305902D6F031E004A2655 /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0305912D6F031E004A2655 /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0305922D6F031E004A2655 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0305932D6F031E004A2655 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD3E74C32D662D64008EF331 /* LogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogVC.swift; sourceTree = "<group>"; };
 		FD6685D02D5715DE0074525C /* RingsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RingsSDK.framework; sourceTree = "<group>"; };
+		FD86C88A2D71B8E500E8E375 /* amOtaApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = amOtaApi.framework; path = frameworks/ApolloSDK/amOtaApi.framework; sourceTree = "<group>"; };
+		FD86C88E2D71B8ED00E8E375 /* RingsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RingsSDK.framework; path = frameworks/RingsSDK/RingsSDK.framework; sourceTree = "<group>"; };
 		FDA3E9B42D30C5AB00FCCF54 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		FDA567742D7180DC00CFFEDF /* amOtaApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = amOtaApi.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +104,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C41A78EF3C7B4C8E529696B0 /* Pods_Rings_SDK_Example.framework in Frameworks */,
-				FD6685D12D5715DE0074525C /* RingsSDK.framework in Frameworks */,
+				FD86C88B2D71B8E500E8E375 /* amOtaApi.framework in Frameworks */,
+				80552E6B8BD2DF801DB62FAA /* Pods_Rings_SDK_Example.framework in Frameworks */,
+				FD86C88F2D71B8ED00E8E375 /* RingsSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77B0D71B79E934817835EF6B /* Pods_Rings_SDK_Tests.framework in Frameworks */,
+				A714ABABB26ED2AFB9CBD00B /* Pods_Rings_SDK_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,9 +200,17 @@
 		886517D6601365650BF5FEDA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD86C88E2D71B8ED00E8E375 /* RingsSDK.framework */,
+				FDA567742D7180DC00CFFEDF /* amOtaApi.framework */,
+				FD86C88A2D71B8E500E8E375 /* amOtaApi.framework */,
+				FD03058F2D6F031E004A2655 /* Alamofire.framework */,
+				FD0305902D6F031E004A2655 /* Moya.framework */,
+				FD0305912D6F031E004A2655 /* RxRelay.framework */,
+				FD0305922D6F031E004A2655 /* RxSwift.framework */,
+				FD0305932D6F031E004A2655 /* SwiftyJSON.framework */,
 				FD6685D02D5715DE0074525C /* RingsSDK.framework */,
-				BBE80AD4EC33C33678F752C4 /* Pods_Rings_SDK_Tests.framework */,
-				375D377B37942136CD1F64B4 /* Pods_Rings_SDK_Example.framework */,
+				2F0E48D74D68BAE2E6A872C5 /* Pods_Rings_SDK_Example.framework */,
+				2CAE90CD5AE3EFA2778F2E13 /* Pods_Rings_SDK_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -198,10 +218,10 @@
 		924F491FF786922FA3102F52 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7403D95A48787E24BBA89C66 /* Pods-Rings-SDK_Example.debug.xcconfig */,
-				7D7B6770540E1FB126C45716 /* Pods-Rings-SDK_Example.release.xcconfig */,
-				0FB9D02ABEFE842A53535B0F /* Pods-Rings-SDK_Tests.debug.xcconfig */,
-				20B886E668C3114766A7D24B /* Pods-Rings-SDK_Tests.release.xcconfig */,
+				DA655DD45B87673D35AEAB10 /* Pods-Rings-SDK_Example.debug.xcconfig */,
+				B4F3910E586571DCF9CE4F17 /* Pods-Rings-SDK_Example.release.xcconfig */,
+				F6CB2AFA57F5AADC000515C0 /* Pods-Rings-SDK_Tests.debug.xcconfig */,
+				270656B95DFFF3F287F9C80E /* Pods-Rings-SDK_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -213,12 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Rings-SDK_Example" */;
 			buildPhases = (
-				E5E12BCE6B47957020C4559C /* [CP] Check Pods Manifest.lock */,
+				0977A787D64C6E5CCB97ADC8 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				FF96FBF513A6327BC394C50D /* [CP] Embed Pods Frameworks */,
-				FD7A8FF42D5613C7006D2F3C /* Embed Frameworks */,
+				468C53D7464B152F42E3A71B /* [CP] Embed Pods Frameworks */,
+				FD86C88D2D71B8E500E8E375 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,7 +253,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Rings-SDK_Tests" */;
 			buildPhases = (
-				4B57AB006E002F9DB59D94EC /* [CP] Check Pods Manifest.lock */,
+				47B1A10BB3BAE6C413F7A3F9 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -318,29 +338,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4B57AB006E002F9DB59D94EC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Rings-SDK_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5E12BCE6B47957020C4559C /* [CP] Check Pods Manifest.lock */ = {
+		0977A787D64C6E5CCB97ADC8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -362,28 +360,56 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FF96FBF513A6327BC394C50D /* [CP] Embed Pods Frameworks */ = {
+		468C53D7464B152F42E3A71B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Rings-SDK_Example/Pods-Rings-SDK_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/LookinServer/LookinServer.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/QMUIKit/QMUIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LookinServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QMUIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rings-SDK_Example/Pods-Rings-SDK_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47B1A10BB3BAE6C413F7A3F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rings-SDK_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -538,14 +564,17 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7403D95A48787E24BBA89C66 /* Pods-Rings-SDK_Example.debug.xcconfig */;
+			baseConfigurationReference = DA655DD45B87673D35AEAB10 /* Pods-Rings-SDK_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				DEVELOPMENT_TEAM = M5T47WSVG3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Rings-SDK",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/frameworks/ApolloSDK",
+					"$(PROJECT_DIR)/frameworks/RingsSDK",
 				);
 				INFOPLIST_FILE = "Rings-SDK/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -560,14 +589,17 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D7B6770540E1FB126C45716 /* Pods-Rings-SDK_Example.release.xcconfig */;
+			baseConfigurationReference = B4F3910E586571DCF9CE4F17 /* Pods-Rings-SDK_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				DEVELOPMENT_TEAM = M5T47WSVG3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Rings-SDK",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/frameworks/ApolloSDK",
+					"$(PROJECT_DIR)/frameworks/RingsSDK",
 				);
 				INFOPLIST_FILE = "Rings-SDK/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -582,7 +614,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FB9D02ABEFE842A53535B0F /* Pods-Rings-SDK_Tests.debug.xcconfig */;
+			baseConfigurationReference = F6CB2AFA57F5AADC000515C0 /* Pods-Rings-SDK_Tests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = M5T47WSVG3;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -611,7 +643,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20B886E668C3114766A7D24B /* Pods-Rings-SDK_Tests.release.xcconfig */;
+			baseConfigurationReference = 270656B95DFFF3F287F9C80E /* Pods-Rings-SDK_Tests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = M5T47WSVG3;
 				FRAMEWORK_SEARCH_PATHS = (
