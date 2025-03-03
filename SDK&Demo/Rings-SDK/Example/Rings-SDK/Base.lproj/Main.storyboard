@@ -360,6 +360,19 @@
                                     <action selector="log_Action:" destination="u1e-7S-0dl" eventType="touchUpInside" id="xqB-k4-SyV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1025" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3z-Yb-0Wo" userLabel="25_Btn">
+                                <rect key="frame" x="141.5" y="510" width="92" height="40"/>
+                                <color key="backgroundColor" red="0.81960785390000002" green="0.84705877299999999" blue="0.85882353779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KJV-yb-4Q6"/>
+                                    <constraint firstAttribute="width" constant="92" id="Svp-Ag-d8J"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="实时RSSI"/>
+                                <connections>
+                                    <action selector="clickAction:" destination="u1e-7S-0dl" eventType="touchUpInside" id="RhV-XS-Rlc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tan-Gw-yAm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -369,6 +382,7 @@
                             <constraint firstItem="Qdz-G9-gSH" firstAttribute="centerX" secondItem="Dev-Hw-cQH" secondAttribute="centerX" id="1NU-v8-797"/>
                             <constraint firstItem="CjW-M8-2jG" firstAttribute="centerX" secondItem="4Re-4O-ETo" secondAttribute="centerX" id="43d-3K-u3G"/>
                             <constraint firstItem="aVm-qG-tVp" firstAttribute="centerY" secondItem="Cb0-DZ-wan" secondAttribute="centerY" id="4Yq-it-Xp5"/>
+                            <constraint firstItem="y3z-Yb-0Wo" firstAttribute="centerY" secondItem="uSH-rV-aY1" secondAttribute="centerY" id="4dE-b4-N1V"/>
                             <constraint firstItem="nfG-Vx-1jR" firstAttribute="centerX" secondItem="tan-Gw-yAm" secondAttribute="centerX" id="8kX-EA-vLp"/>
                             <constraint firstItem="FnS-I2-ahV" firstAttribute="centerY" secondItem="Gj6-8R-nte" secondAttribute="centerY" id="AQJ-OU-VWj"/>
                             <constraint firstItem="zAR-yg-AJg" firstAttribute="top" secondItem="fmb-V9-T3r" secondAttribute="bottom" constant="20" id="Bz1-Xz-EEd"/>
@@ -405,6 +419,7 @@
                             <constraint firstItem="CjW-M8-2jG" firstAttribute="centerY" secondItem="Qdz-G9-gSH" secondAttribute="centerY" id="nMV-n6-NQy"/>
                             <constraint firstItem="uSH-rV-aY1" firstAttribute="centerX" secondItem="Gj6-8R-nte" secondAttribute="centerX" id="nYE-do-9Is"/>
                             <constraint firstItem="Tep-N1-Wr8" firstAttribute="centerY" secondItem="fmb-V9-T3r" secondAttribute="centerY" id="nr2-hv-Njn"/>
+                            <constraint firstItem="y3z-Yb-0Wo" firstAttribute="centerX" secondItem="FnS-I2-ahV" secondAttribute="centerX" id="pCF-IT-CkF"/>
                             <constraint firstItem="YiT-qE-iEf" firstAttribute="centerX" secondItem="Dev-Hw-cQH" secondAttribute="centerX" id="pNN-Q3-1wG"/>
                             <constraint firstItem="wve-Ea-q6v" firstAttribute="centerX" secondItem="VNV-18-B7Y" secondAttribute="centerX" id="pbV-Lf-Gsn"/>
                             <constraint firstItem="nfG-Vx-1jR" firstAttribute="centerY" secondItem="Dev-Hw-cQH" secondAttribute="centerY" id="pyD-WJ-9wM"/>

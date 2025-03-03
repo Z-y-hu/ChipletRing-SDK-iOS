@@ -665,6 +665,7 @@ extension RingsSDK.RingManager : CoreBluetooth.CBCentralManagerDelegate {
 }
 extension RingsSDK.RingManager : CoreBluetooth.CBPeripheralDelegate {
   @objc dynamic public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didDiscoverServices _: (any Swift.Error)?)
+  @objc dynamic public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didReadRSSI RSSI: Foundation.NSNumber, error: (any Swift.Error)?)
   @objc dynamic public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didDiscoverCharacteristicsFor service: CoreBluetooth.CBService, error err: (any Swift.Error)?)
   @objc dynamic public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didUpdateValueFor characteristic: CoreBluetooth.CBCharacteristic, error err: (any Swift.Error)?)
 }
@@ -709,6 +710,9 @@ extension RingsSDK.RingManager {
 extension RingsSDK.RingManager {
   public func startOTA(_ fileUrl: Foundation.URL, handle: ((RingsSDK.OTAStatus) -> Swift.Void)?)
   public func startApolloOTA(fileUrl: Foundation.URL, handle: ((RingsSDK.ApolloOTAStatus) -> Swift.Void)?)
+  @discardableResult
+  public func startMonitorRSSI(updateBlock: @escaping (Swift.Result<Foundation.NSNumber, RingsSDK.ReadError>) -> Swift.Void) -> Swift.Bool
+  public func stopMonitorRSSI()
 }
 public struct RingSystemConfigModel {
   public let firmwareVersion: Swift.String

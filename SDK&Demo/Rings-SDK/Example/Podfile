@@ -5,10 +5,11 @@ platform :ios, '13.0'
 target 'Rings-SDK_Example' do
   pod 'LookinServer', :subspecs => ['Swift'], :configurations => ['Debug']
   pod 'QMUIKit','4.8.0'
-  pod 'RxRelay', '~> 6.8.0'
-  pod 'RxSwift', '~> 6.8.0'
-  pod 'SwiftyJSON', '~> 5.0.2'
-  pod 'Moya', '~> 15.0.0'
+   pod 'RxSwift'
+   pod 'RxRelay'
+   pod 'SwiftyJSON', '~> 5.0.2'
+   pod 'Alamofire', '~> 5.10.2'
+   pod 'Moya', '~> 15.0.0'
   target 'Rings-SDK_Tests' do
     inherit! :search_paths
   end

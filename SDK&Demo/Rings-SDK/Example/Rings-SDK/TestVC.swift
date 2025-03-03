@@ -377,7 +377,7 @@ class TestVC: UIViewController {
 
         case 1021:
             BDLogger.info("=========>获取SDK Token")
-            RingNetworkManager.shared.createToken(apiKey: "APIKey", userIdentifier: "用户唯一标识") { result in
+            RingNetworkManager.shared.createToken(apiKey: "76d07e37bfe341b1a25c76c0e25f457a", userIdentifier: "432591@qq.com") { result in
                 switch result {
                 case let .success(token):
                     BDLogger.info("✅ Token获取成功：")
@@ -484,6 +484,27 @@ class TestVC: UIViewController {
                     BDLogger.info("OTA: 设备重启成功")
                 case .rebootFailed:
                     BDLogger.error("OTA: 设备重启失败")
+                }
+            }
+            break
+
+        case 1025:
+            BDLogger.info("=========>读取蓝牙设备实时RSSI")
+            RingManager.shared.startMonitorRSSI { result in
+                switch result {
+                case let .success(rssi):
+                    BDLogger.info("当前RSSI: \(rssi.intValue)")
+                    // 可以根据RSSI值来判断信号强度
+                    let rssiValue = rssi.intValue
+                case let .failure(error):
+                    switch error {
+                    case .disconnect:
+                        BDLogger.info("设备未连接")
+                    case .fail:
+                        BDLogger.info("读取RSSI失败")
+                    default:
+                        BDLogger.info("其他错误: \(error)")
+                    }
                 }
             }
             break

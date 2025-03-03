@@ -20,10 +20,10 @@
 		A714ABABB26ED2AFB9CBD00B /* Pods_Rings_SDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CAE90CD5AE3EFA2778F2E13 /* Pods_Rings_SDK_Tests.framework */; };
 		A74190282AD06B6200C2D6EE /* 2.3.7.511S.hex16 in Resources */ = {isa = PBXBuildFile; fileRef = A74190272AD06B6200C2D6EE /* 2.3.7.511S.hex16 */; };
 		FD3E74C42D662D64008EF331 /* LogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E74C32D662D64008EF331 /* LogVC.swift */; };
-		FD86C88B2D71B8E500E8E375 /* amOtaApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD86C88A2D71B8E500E8E375 /* amOtaApi.framework */; };
-		FD86C88C2D71B8E500E8E375 /* amOtaApi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD86C88A2D71B8E500E8E375 /* amOtaApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FD86C88F2D71B8ED00E8E375 /* RingsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD86C88E2D71B8ED00E8E375 /* RingsSDK.framework */; };
-		FD86C8902D71B8ED00E8E375 /* RingsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD86C88E2D71B8ED00E8E375 /* RingsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD534EE22D7558BD00709983 /* RingsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD534EE12D7558BD00709983 /* RingsSDK.framework */; };
+		FD534EE32D7558BD00709983 /* RingsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD534EE12D7558BD00709983 /* RingsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD534EE62D7558CB00709983 /* amOtaApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD534EE52D7558CB00709983 /* amOtaApi.framework */; };
+		FD534EE72D7558CB00709983 /* amOtaApi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD534EE52D7558CB00709983 /* amOtaApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDA3E9B52D30C5AB00FCCF54 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA3E9B42D30C5AB00FCCF54 /* TestVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,14 +48,14 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FD86C88D2D71B8E500E8E375 /* Embed Frameworks */ = {
+		FD534EE42D7558BD00709983 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FD86C88C2D71B8E500E8E375 /* amOtaApi.framework in Embed Frameworks */,
-				FD86C8902D71B8ED00E8E375 /* RingsSDK.framework in Embed Frameworks */,
+				FD534EE72D7558CB00709983 /* amOtaApi.framework in Embed Frameworks */,
+				FD534EE32D7558BD00709983 /* RingsSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,11 +92,11 @@
 		FD0305922D6F031E004A2655 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD0305932D6F031E004A2655 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD3E74C32D662D64008EF331 /* LogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogVC.swift; sourceTree = "<group>"; };
+		FD534EE12D7558BD00709983 /* RingsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RingsSDK.framework; path = frameworks/RingsSDK/RingsSDK.framework; sourceTree = "<group>"; };
+		FD534EE52D7558CB00709983 /* amOtaApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = amOtaApi.framework; path = frameworks/ApoplloSDK/amOtaApi.framework; sourceTree = "<group>"; };
 		FD6685D02D5715DE0074525C /* RingsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RingsSDK.framework; sourceTree = "<group>"; };
-		FD86C88A2D71B8E500E8E375 /* amOtaApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = amOtaApi.framework; path = frameworks/ApolloSDK/amOtaApi.framework; sourceTree = "<group>"; };
-		FD86C88E2D71B8ED00E8E375 /* RingsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RingsSDK.framework; path = frameworks/RingsSDK/RingsSDK.framework; sourceTree = "<group>"; };
+		FD86C87D2D71B37800E8E375 /* amOtaApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = amOtaApi.framework; sourceTree = "<group>"; };
 		FDA3E9B42D30C5AB00FCCF54 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
-		FDA567742D7180DC00CFFEDF /* amOtaApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = amOtaApi.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +104,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD86C88B2D71B8E500E8E375 /* amOtaApi.framework in Frameworks */,
 				80552E6B8BD2DF801DB62FAA /* Pods_Rings_SDK_Example.framework in Frameworks */,
-				FD86C88F2D71B8ED00E8E375 /* RingsSDK.framework in Frameworks */,
+				FD534EE22D7558BD00709983 /* RingsSDK.framework in Frameworks */,
+				FD534EE62D7558CB00709983 /* amOtaApi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,9 +200,9 @@
 		886517D6601365650BF5FEDA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FD86C88E2D71B8ED00E8E375 /* RingsSDK.framework */,
-				FDA567742D7180DC00CFFEDF /* amOtaApi.framework */,
-				FD86C88A2D71B8E500E8E375 /* amOtaApi.framework */,
+				FD534EE52D7558CB00709983 /* amOtaApi.framework */,
+				FD534EE12D7558BD00709983 /* RingsSDK.framework */,
+				FD86C87D2D71B37800E8E375 /* amOtaApi.framework */,
 				FD03058F2D6F031E004A2655 /* Alamofire.framework */,
 				FD0305902D6F031E004A2655 /* Moya.framework */,
 				FD0305912D6F031E004A2655 /* RxRelay.framework */,
@@ -238,7 +238,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				468C53D7464B152F42E3A71B /* [CP] Embed Pods Frameworks */,
-				FD86C88D2D71B8E500E8E375 /* Embed Frameworks */,
+				FD534EE42D7558BD00709983 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -573,8 +573,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Rings-SDK",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/frameworks/ApolloSDK",
 					"$(PROJECT_DIR)/frameworks/RingsSDK",
+					"$(PROJECT_DIR)/frameworks/ApoplloSDK",
 				);
 				INFOPLIST_FILE = "Rings-SDK/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -598,8 +598,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Rings-SDK",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/frameworks/ApolloSDK",
 					"$(PROJECT_DIR)/frameworks/RingsSDK",
+					"$(PROJECT_DIR)/frameworks/ApoplloSDK",
 				);
 				INFOPLIST_FILE = "Rings-SDK/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

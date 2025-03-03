@@ -358,17 +358,18 @@ SWIFT_CLASS("_TtC8RingsSDK11RingManager")
 
 
 @class CBPeripheral;
+@class NSNumber;
 @class CBService;
 @class CBCharacteristic;
 
 @interface RingManager (SWIFT_EXTENSION(RingsSDK)) <CBPeripheralDelegate>
 - (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverServices:(NSError * _Nullable)_;
+- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didReadRSSI:(NSNumber * _Nonnull)RSSI error:(NSError * _Nullable)error;
 - (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverCharacteristicsForService:(CBService * _Nonnull)service error:(NSError * _Nullable)err;
 - (void)peripheral:(CBPeripheral * _Nonnull)peripheral didUpdateValueForCharacteristic:(CBCharacteristic * _Nonnull)characteristic error:(NSError * _Nullable)err;
 @end
 
 @class CBCentralManager;
-@class NSNumber;
 
 @interface RingManager (SWIFT_EXTENSION(RingsSDK)) <CBCentralManagerDelegate>
 - (void)centralManagerDidUpdateState:(CBCentralManager * _Nonnull)central;
