@@ -86,16 +86,9 @@
 		B4F3910E586571DCF9CE4F17 /* Pods-Rings-SDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Example.release.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Example/Pods-Rings-SDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DA655DD45B87673D35AEAB10 /* Pods-Rings-SDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Example/Pods-Rings-SDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F6CB2AFA57F5AADC000515C0 /* Pods-Rings-SDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Tests/Pods-Rings-SDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		FD03058F2D6F031E004A2655 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD0305902D6F031E004A2655 /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD0305912D6F031E004A2655 /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD0305922D6F031E004A2655 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD0305932D6F031E004A2655 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD3E74C32D662D64008EF331 /* LogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogVC.swift; sourceTree = "<group>"; };
 		FD534EE12D7558BD00709983 /* RingsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RingsSDK.framework; path = frameworks/RingsSDK/RingsSDK.framework; sourceTree = "<group>"; };
 		FD534EE52D7558CB00709983 /* amOtaApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = amOtaApi.framework; path = frameworks/ApoplloSDK/amOtaApi.framework; sourceTree = "<group>"; };
-		FD6685D02D5715DE0074525C /* RingsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RingsSDK.framework; sourceTree = "<group>"; };
-		FD86C87D2D71B37800E8E375 /* amOtaApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = amOtaApi.framework; sourceTree = "<group>"; };
 		FDA3E9B42D30C5AB00FCCF54 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,13 +195,6 @@
 			children = (
 				FD534EE52D7558CB00709983 /* amOtaApi.framework */,
 				FD534EE12D7558BD00709983 /* RingsSDK.framework */,
-				FD86C87D2D71B37800E8E375 /* amOtaApi.framework */,
-				FD03058F2D6F031E004A2655 /* Alamofire.framework */,
-				FD0305902D6F031E004A2655 /* Moya.framework */,
-				FD0305912D6F031E004A2655 /* RxRelay.framework */,
-				FD0305922D6F031E004A2655 /* RxSwift.framework */,
-				FD0305932D6F031E004A2655 /* SwiftyJSON.framework */,
-				FD6685D02D5715DE0074525C /* RingsSDK.framework */,
 				2F0E48D74D68BAE2E6A872C5 /* Pods_Rings_SDK_Example.framework */,
 				2CAE90CD5AE3EFA2778F2E13 /* Pods_Rings_SDK_Tests.framework */,
 			);
