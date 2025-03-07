@@ -1,13 +1,8 @@
 PODS:
-  - Alamofire (5.10.2)
   - ApolloOTA (0.1.0)
   - LookinServer/Core (1.2.8)
   - LookinServer/Swift (1.2.8):
     - LookinServer/Core
-  - Moya (15.0.0):
-    - Moya/Core (= 15.0.0)
-  - Moya/Core (15.0.0):
-    - Alamofire (~> 5.0)
   - QMUIKit (4.8.0):
     - QMUIKit/QMUIComponents (= 4.8.0)
     - QMUIKit/QMUICore (= 4.8.0)
@@ -328,28 +323,21 @@ PODS:
   - RxRelay (6.8.0):
     - RxSwift (= 6.8.0)
   - RxSwift (6.8.0)
-  - SwiftyJSON (5.0.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.10.2)
   - ApolloOTA (from `Frameworks/ApolloSDK`)
   - LookinServer/Swift
-  - Moya (~> 15.0.0)
   - QMUIKit (= 4.8.0)
   - RingsSDK (from `Frameworks/RingsSDK`)
   - RxRelay (~> 6.8.0)
   - RxSwift (~> 6.8.0)
-  - SwiftyJSON (~> 5.0.2)
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - LookinServer
-    - Moya
     - QMUIKit
     - RxRelay
     - RxSwift
-    - SwiftyJSON
 
 EXTERNAL SOURCES:
   ApolloOTA:
@@ -358,16 +346,13 @@ EXTERNAL SOURCES:
     :path: Frameworks/RingsSDK
 
 SPEC CHECKSUMS:
-  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
   ApolloOTA: a4ca4104448ea065815e0c71b18b521fd8710c54
   LookinServer: 1b2b61c6402ae29fa22182d48f5cd067b4e99e80
-  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   QMUIKit: 3c622fe3c55c0dccfad750634bd9ee5e7ade9a53
   RingsSDK: fc6144787f144d4fe2aa8954ec01e9f339626da5
   RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
   RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
-  SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
 
-PODFILE CHECKSUM: 9610f18b08443b604a4b8fae651b001d4c5ef4c0
+PODFILE CHECKSUM: 153d61c002bb8ada9f02260ce0c93ac16d78192d
 
 COCOAPODS: 1.16.2

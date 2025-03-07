@@ -10,7 +10,8 @@
 
 支持 iOS 版本：iOS 13.0+
 支持的语言版本：Swift 5.0+
-开发工具: xcode 15+
+开发工具: xcode 16.2
+(如遇到Swift 编译器版本不一致问题，可及时联系我们，我们会及时更新SDK)
 
 ### 3、	简介说明
 
@@ -98,23 +99,19 @@
 
 ## 二、	快速使用
 
-### 手动集成
-
-1、分别将SDK&Demo/Rings-SDK/Example/frameworks 目录下的amOtaApi.framework、RingsSDK.framework集成到工程项目中。
-
-2、确保在项目的Target->General->Frameworks,Libraries,and Embedded Content中添加amOtaApi.framework、RingsSDK.framework。
-
-3、确保在项目的info.plist文件中添加蓝牙权限说明、网络权限。
-
-4、在需要使用的地方引入SDK：
-
-在使用的地方引入SDK即可：
+### Cocoapods 集成方式
+1、首先可以将Demo工程中的Frameworks文件夹复制到自己的工程目录下。
+2、在Podfile文件中添加如下代码：
 
 ```swift
-import RingsSDK
+use_frameworks!
+use_modular_headers!
+pod 'RxRelay', '~> 6.8.0'
+pod 'RxSwift', '~> 6.8.0'  
+pod 'RingsSDK', :path => 'Frameworks/RingsSDK'
+pod 'ApolloOTA', :path => 'Frameworks/ApolloSDK'
 ```
-
-**注：目前版本pod方法存在问题，静待更新**
+**注：保证podfile文件中的路径正确**
 
 ## 三、	API功能说明
 
@@ -164,9 +161,9 @@ import RingsSDK
 	        })
 ```
 
-注意事项：无
-参数说明：无
-返回值：无
+注意事项：需要做设备重连时，可在首次连接成功之后，自行保存设备的uuid，然后通过此接口进行重连
+参数说明：deviceUUID为设备的uuid
+返回值：deviceInfo为连接成功后的设备数据模型，包含设备的uuid、mac地址、设备名称等信息
 
 #### 1.4 通过MAC连接戒指的示例
 
@@ -458,7 +455,7 @@ import RingsSDK
 
 #### 2.10 读取温度
 
-接口说明： 读取当前温度，返回结果单位为摄氏度(℃)
+接口说明： 读取当前温度，返回结果为Int类型，可自行/100进行转换处理。单位为摄氏度(℃)
 接口声明：
 
 ```swift

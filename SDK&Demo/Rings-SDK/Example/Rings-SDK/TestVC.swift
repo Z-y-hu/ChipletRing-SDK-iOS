@@ -195,7 +195,7 @@ class TestVC: UIViewController {
             manager.readTemperature { res in
                 switch res {
                 case let .success(success):
-                    BDLogger.info("成功=====>\(success)")
+                    BDLogger.info("成功=====>\(Double(success) * 0.01)")
                 case let .failure(failure):
                     BDLogger.info("失败=====>\(failure)")
                 }
@@ -421,7 +421,7 @@ class TestVC: UIViewController {
                     } else {
                         BDLogger.info("✅ 当前已是最新版本")
                     }
-                    BDLogger.info("📝 消息：\(versionInfo.message)")
+                    BDLogger.info("📝 消息：\(String(describing: versionInfo.version))")
                 case let .failure(error):
                     switch error {
                     case .invalidParameters:

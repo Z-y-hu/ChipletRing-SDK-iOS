@@ -2,19 +2,16 @@
 // swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
 // swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name RingsSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
-import Alamofire
 import CoreBluetooth
 import Darwin
 import Dispatch
 import Foundation
-import Moya
 import ObjectiveC
 @_exported import RingsSDK
 import RxRelay
 import RxSwift
 import SQLite3
 import Swift
-import SwiftyJSON
 import UIKit
 import _Concurrency
 import _StringProcessing
@@ -401,6 +398,14 @@ public struct TimeCalculationOptions {
 public let BDLogger: RingsSDK.SwiftyBeaver.Type
 public let defaultLogDirectoryPath: Swift.String
 public func BDSetUpLogger(_ directoryPath: Swift.String = defaultLogDirectoryPath)
+@_inheritsConvenienceInitializers @objc public class BDLog : ObjectiveC.NSObject {
+  @objc public class func info(_ message: Swift.String)
+  @objc public class func debug(_ message: Swift.String)
+  @objc public class func warning(_ message: Swift.String)
+  @objc public class func error(_ message: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
 public protocol UserDefaultsSerializable {
   associatedtype StoredValue
   var storedValue: Self.StoredValue { get }
@@ -693,7 +698,7 @@ extension RingsSDK.RingManager {
   public func readHeartRateWithRR(rrTime: Swift.UInt8, progressBlock: @escaping (Swift.Double) -> Swift.Void, inHeartRRBlock: @escaping (Swift.Int, Swift.Int, [Swift.Int]) -> Swift.Void, inHeartBlock: @escaping (Swift.Int) -> Swift.Void, resultBlock: @escaping (Swift.Result<Swift.Int, RingsSDK.ReadError>) -> Swift.Void)
   public func readO2(progressBlock: @escaping (Swift.Double) -> Swift.Void, isOpenWave: Swift.Bool = false, tableBlock: @escaping (Swift.Int, Swift.Int, [Swift.UInt8]) -> Swift.Void, resultBlock: @escaping (Swift.Result<Swift.Int, RingsSDK.ReadError>) -> Swift.Void)
   public func readHRV(progressBlock: @escaping (Swift.Double) -> Swift.Void, isOpenWave: Swift.Bool = false, tableBlock: @escaping (Swift.Int, Swift.Int, [Swift.UInt8]) -> Swift.Void, resultBlock: @escaping (Swift.Result<Swift.Int, RingsSDK.ReadError>) -> Swift.Void)
-  public func readTemperature(resultBlock: @escaping (Swift.Result<Swift.Float, RingsSDK.ReadError>) -> Swift.Void)
+  public func readTemperature(resultBlock: @escaping (Swift.Result<Swift.Int, RingsSDK.ReadError>) -> Swift.Void)
   public func readAppVersion(resultBlock: @escaping (Swift.Result<Swift.String, RingsSDK.ReadError>) -> Swift.Void)
   public func readHardWareVersion(resultBlock: @escaping (Swift.Result<Swift.String, RingsSDK.ReadError>) -> Swift.Void)
   public func clearRingData(resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)
@@ -788,6 +793,57 @@ extension RingsSDK.TimePeriodProtocol {
   }
   public init(key keyName: Swift.String, userDefaults: Foundation.UserDefaults = .standard)
 }
+public protocol ServerResponse {
+  var status: Swift.Int { get }
+  var message: Swift.String { get }
+}
+public enum RingNetworkError : Foundation.LocalizedError {
+  case invalidResponse
+  case networkError(Swift.String)
+  case serverError(Swift.Int, Swift.String)
+  case invalidParameters(Swift.String)
+  case httpError(Swift.Int)
+  case decodingError(any Swift.Error)
+  case tokenError(Swift.String)
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public struct TokenResponse : Swift.Codable, RingsSDK.ServerResponse {
+  public let message: Swift.String
+  public let status: Swift.Int
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CheckVersionResponse : Swift.Codable, RingsSDK.ServerResponse {
+  public let result: RingsSDK.CheckVersionResponse.VersionResult
+  public let message: Swift.String
+  public let count: Swift.Int
+  public let status: Swift.Int
+  public struct VersionResult : Swift.Codable {
+    public let version: Swift.String?
+    public let download: Swift.String?
+    public let fileName: Swift.String?
+    public init(from decoder: any Swift.Decoder) throws
+    public func encode(to encoder: any Swift.Encoder) throws
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct VersionInfo {
+  public let hasNewVersion: Swift.Bool
+  public let version: Swift.String?
+  public let downloadUrl: Swift.String?
+  public let fileName: Swift.String?
+  public let message: Swift.String
+}
+@_hasMissingDesignatedInitializers final public class RingNetworkManager {
+  public static let shared: RingsSDK.RingNetworkManager
+  final public func createToken(apiKey: Swift.String, userIdentifier: Swift.String, completion: @escaping (Swift.Result<Swift.String, RingsSDK.RingNetworkError>) -> Swift.Void)
+  final public func checkDeviceVersion(version: Swift.String, completion: @escaping (Swift.Result<RingsSDK.VersionInfo, RingsSDK.RingNetworkError>) -> Swift.Void)
+  final public func downloadFile(url: Swift.String, fileName: Swift.String, destinationPath: Swift.String, progress: @escaping (Swift.Double) -> Swift.Void, completion: @escaping (Swift.Result<Swift.String, RingsSDK.RingNetworkError>) -> Swift.Void)
+  @objc deinit
+}
 extension Foundation.Date {
   public var isLeapMonth: Swift.Bool {
     get
@@ -828,6 +884,7 @@ public enum ReadError : Swift.Error {
   case getBluetoothFail
   case invalidData
   case outOfArray
+  case dataCollectionTimeout
   public static func == (a: RingsSDK.ReadError, b: RingsSDK.ReadError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -1686,48 +1743,6 @@ extension Swift.Int {
     get
   }
 }
-public enum RingNetworkError : Swift.Error {
-  case invalidResponse
-  case networkError(Swift.String)
-  case serverError(Swift.Int, Swift.String)
-  case invalidParameters
-  case httpError(Swift.Int)
-  case decodingError(any Swift.Error)
-  case tokenError(Swift.String)
-}
-public struct TokenResponse : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public struct CheckVersionResponse : Swift.Codable {
-  public let result: RingsSDK.CheckVersionResponse.VersionResult
-  public let message: Swift.String
-  public let count: Swift.Int
-  public let status: Swift.Int
-  public struct VersionResult : Swift.Codable {
-    public let version: Swift.String?
-    public let download: Swift.String?
-    public let fileName: Swift.String?
-    public init(from decoder: any Swift.Decoder) throws
-    public func encode(to encoder: any Swift.Encoder) throws
-  }
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public struct VersionInfo {
-  public let hasNewVersion: Swift.Bool
-  public let version: Swift.String?
-  public let downloadUrl: Swift.String?
-  public let fileName: Swift.String?
-  public let message: Swift.String
-}
-@_hasMissingDesignatedInitializers final public class RingNetworkManager {
-  public static let shared: RingsSDK.RingNetworkManager
-  final public func createToken(apiKey: Swift.String, userIdentifier: Swift.String, completion: @escaping (Swift.Result<Swift.String, RingsSDK.RingNetworkError>) -> Swift.Void)
-  final public func checkDeviceVersion(version: Swift.String, completion: @escaping (Swift.Result<RingsSDK.VersionInfo, RingsSDK.RingNetworkError>) -> Swift.Void)
-  final public func downloadFile(url: Swift.String, fileName: Swift.String, destinationPath: Swift.String, progress: @escaping (Swift.Double) -> Swift.Void, completion: @escaping (Swift.Result<Swift.String, RingsSDK.RingNetworkError>) -> Swift.Void)
-  @objc deinit
-}
 @_hasMissingDesignatedInitializers public class DOTNETParser : RingsSDK.StringToDateTransformable {
   public static func parse(_ string: Swift.String) -> (seconds: Foundation.TimeInterval, tz: Foundation.TimeZone)?
   public static func parse(_ string: Swift.String, region: RingsSDK.Region?, options: Any?) -> RingsSDK.DateInRegion?
@@ -1740,20 +1755,22 @@ public struct VersionInfo {
 extension Foundation.FileManager {
   public func shareFile(filePath: Swift.String, resultBlock: @escaping ((_ result: Swift.Bool) -> Swift.Void))
 }
-@objc @_hasMissingDesignatedInitializers final public class RingDataModel : ObjectiveC.NSObject {
-  final public var total: Swift.UInt32
-  final public var serialNum: Swift.UInt32
-  final public var timestamp: Swift.UInt32
-  final public var stepsOfTheDay: Swift.UInt16
-  final public var rate: Swift.Int
-  final public var O2: Swift.Int
-  final public var hrv: Swift.Int
-  final public var mentalStress: Swift.Int
-  final public var temp: Swift.Float
-  final public var isRunning: Swift.Bool
-  final public var sleepType: Swift.Int
-  final public var RRNums: Swift.Int
-  final public var rrs: [Swift.Int]
+@_inheritsConvenienceInitializers @objc final public class RingDataModel : ObjectiveC.NSObject {
+  @objc final public var total: Swift.UInt32
+  @objc final public var serialNum: Swift.UInt32
+  @objc final public var timestamp: Swift.UInt32
+  @objc final public var stepsOfTheDay: Swift.UInt16
+  @objc final public var rate: Swift.Int
+  @objc final public var O2: Swift.Int
+  @objc final public var hrv: Swift.Int
+  @objc final public var mentalStress: Swift.Int
+  @objc final public var temp: Swift.Float
+  @objc final public var isRunning: Swift.Bool
+  @objc final public var sleepType: Swift.Int
+  @objc final public var RRNums: Swift.Int
+  @objc final public var rrs: [Swift.Int]
+  @objc override dynamic public init()
+  @objc public init(bytes: [Swift.UInt8])
   @objc override final public var description: Swift.String {
     @objc get
   }
@@ -1922,16 +1939,16 @@ final public class GoogleCloudDestination : RingsSDK.BaseDestination {
   @objc override dynamic public var hash: Swift.Int {
     @objc get
   }
-  public var advertisementData: [Swift.String : Any]
-  public var rssi: Foundation.NSNumber
-  public var uuidString: Swift.String {
-    get
+  @objc public var advertisementData: [Swift.String : Any]
+  @objc public var rssi: Foundation.NSNumber
+  @objc public var uuidString: Swift.String {
+    @objc get
   }
-  public var peripheralName: Swift.String? {
-    get
+  @objc public var peripheralName: Swift.String? {
+    @objc get
   }
-  public var peripheral: CoreBluetooth.CBPeripheral
-  public init(peripheral: CoreBluetooth.CBPeripheral, advertisementData: [Swift.String : Any], rssi: Foundation.NSNumber)
+  @objc public var peripheral: CoreBluetooth.CBPeripheral
+  @objc public init(peripheral: CoreBluetooth.CBPeripheral, advertisementData: [Swift.String : Any], rssi: Foundation.NSNumber)
   @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
   @objc deinit
 }
@@ -1992,23 +2009,25 @@ public class SBPlatformDestination : RingsSDK.BaseDestination {
   public func sendNow()
   @objc deinit
 }
-public struct RingSleepModel {
-  public var hours: Swift.Int
-  public var minutes: Swift.Int
-  public var allHours: Swift.Int
-  public var allMinutes: Swift.Int
-  public var sleepHours: Swift.Int
-  public var sleepMinutes: Swift.Int
-  public var highTime: Swift.Int64
-  public var lowTime: Swift.Int64
-  public var ydTime: Swift.Int64
-  public var qxTime: Swift.Int64
-  public var startTime: Swift.Int64
-  public var endTime: Swift.Int64
-  public var sleepDataList: [RingsSDK.RingDataModel]
-  public var description: Swift.String {
-    get
+@_inheritsConvenienceInitializers @objc public class RingSleepModel : ObjectiveC.NSObject {
+  @objc public var hours: Swift.Int
+  @objc public var minutes: Swift.Int
+  @objc public var allHours: Swift.Int
+  @objc public var allMinutes: Swift.Int
+  @objc public var sleepHours: Swift.Int
+  @objc public var sleepMinutes: Swift.Int
+  @objc public var highTime: Swift.Int64
+  @objc public var lowTime: Swift.Int64
+  @objc public var ydTime: Swift.Int64
+  @objc public var qxTime: Swift.Int64
+  @objc public var startTime: Swift.Int64
+  @objc public var endTime: Swift.Int64
+  @objc public var sleepDataList: [RingsSDK.RingDataModel]
+  @objc override dynamic public var description: Swift.String {
+    @objc get
   }
+  @objc override dynamic public init()
+  @objc deinit
 }
 @_inheritsConvenienceInitializers open class TimePeriodChain : RingsSDK.TimePeriodGroup {
   public func append(_ period: any RingsSDK.TimePeriodProtocol)
@@ -2349,7 +2368,6 @@ extension RingsSDK.RingManager {
   public func calculateSleepTimes(sleepDatas: [RingsSDK.RingDataModel]) -> Swift.Int
   public class func isHourInRange(timestamp: Foundation.TimeInterval, hourCondition1: Swift.Int, hourCondition2: Swift.Int) -> Swift.Bool
 }
-public let kRequestTimeout: Swift.Double
 public protocol ZoneConvertible {
   func toTimezone() -> Foundation.TimeZone
 }
