@@ -41,9 +41,8 @@
         case 1002:{
             [BDLog info:@"同步时间"];
             //  东8区
-            NSTimeZone *zone = [NSTimeZone timeZoneForSecondsFromGMT:8 * 3600];
             [[BCLRingManager shared] syncDeviceTimeWithTimeZoneWithDate:[NSDate date]
-                                                               timeZone:zone
+                                                               timeZone:NSTimeZone.systemTimeZone
                                                              completion:^(BOOL success, NSString *_Nullable message) {
                 if (success) {
                     [BDLog info:@"同步时间成功"];
