@@ -79,6 +79,21 @@ import RingsSDK
         }
     }
 
+    // 同步设备时间（时区）
+    @objc public func syncDeviceTimeWithTimeZone(date: Date, timeZone: TimeZone, completion: @escaping (_ success: Bool, _ message: String?) -> Void) {
+        RingManager.shared.syncTime(date: date, timeZone: timeZone) { res in
+            switch res {
+            case let .success(value):
+                BDLogger.info("成功=====>\(value)")
+                completion(true, String(describing: value))
+
+            case let .failure(error):
+                BDLogger.info("失败=====>\(error)")
+                completion(false, error.localizedDescription)
+            }
+        }
+    }
+
     // 读取设备时间
     @objc public func readDeviceTime(completion: @escaping (_ success: Bool, _ timestamp: Double) -> Void) {
         RingManager.shared.readTime { res in
@@ -171,7 +186,7 @@ import RingsSDK
     }
 
     // 读取温度
-    @objc public func readTemperature(completion: @escaping (_ success: Bool, _ temperature: Float) -> Void) {
+    @objc public func readTemperature(completion: @escaping (_ success: Bool, _ temperature: Int) -> Void) {
         RingManager.shared.readTemperature { res in
             switch res {
             case let .success(value):

@@ -659,6 +659,7 @@ public enum StringToDateStyles {
   public var currentDevice: RingsSDK.DeviceInfo? {
     get
   }
+  public var ringPushBatteryBlock: ((Swift.Int) -> Swift.Void)?
   @objc deinit
 }
 extension RingsSDK.RingManager : CoreBluetooth.CBCentralManagerDelegate {
@@ -705,6 +706,7 @@ extension RingsSDK.RingManager {
   public func reset(resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)
   public func setFrequency(time: Swift.Int, resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)
   public func readFrequency(resultBlock: @escaping (Swift.Result<Swift.Int, RingsSDK.ReadError>) -> Swift.Void)
+  public func syncTime(date: Foundation.Date, timeZone: Foundation.TimeZone = TimeZone.current, resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)
   public func syncTime(date: Foundation.Date, resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)
   public func readTime(resultBlock: @escaping (Swift.Result<Foundation.TimeInterval, RingsSDK.ReadError>) -> Swift.Void)
   public func setBluetoothName(name: Swift.String, resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)

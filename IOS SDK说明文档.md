@@ -276,6 +276,25 @@ pod 'ApolloOTA', :path => 'Frameworks/ApolloSDK'
 参数说明：无
 返回值：无
 
+#### 2.1.1 同步时间+时区
+
+接口说明： 同步时间，可自行配置时区（默认东八区）
+接口声明：
+
+```swift
+	RingManager.shared.syncTime(date: Date(), timeZone: TimeZone.current) { res in
+	                  switch res {
+	                  case .success(let isSuccess):
+	                      print("同步时间结果======\(isSuccess)")
+	                  case .failure(let error):
+	                      print("同步失败======\(error)")
+	             }
+	         }
+```
+注意事项：调用此接口 ，需保证与戒指处于连接状态
+参数说明：date：时间，timeZone：时区
+返回值：无
+
 #### 2.2 读取时间
 
 接口说明：
@@ -339,6 +358,7 @@ pod 'ApolloOTA', :path => 'Frameworks/ApolloSDK'
 #### 2.5 读取电池电量
 
 接口说明： 若返回的电池电量为101，则表示正在充电中
+
 接口声明：
 
 ```swift
@@ -355,6 +375,30 @@ pod 'ApolloOTA', :path => 'Frameworks/ApolloSDK'
 注意事项：调用此接口 ，需保证与戒指处于连接状态
 参数说明：无
 返回值：无
+
+#### 2.5.1 戒指主动推送电量
+
+接口说明： 戒指主动推送电量，当戒指电量发生变化时，会主动推送电量信息
+
+接口声明：
+
+```swift
+	RingManager.shared.ringPushBatteryBlock = { battery in
+					if battery == 101 {
+						print("充电中")
+					} else if battery == 102 {
+						print("充电完成")
+					} else {
+						print("电量=====>\(battery)")
+					}
+	            }
+```
+
+注意事项：当戒指主动推送电量信息时候会触发该回调（可能会多次）
+
+参数说明：无
+
+返回值：电量值0-100，101:充电中、102:充电完成
 
 #### 2.6 读取电池充电状态
 

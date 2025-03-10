@@ -40,14 +40,25 @@
 
         case 1002:{
             [BDLog info:@"同步时间"];
-            [[BCLRingManager shared] syncDeviceTimeWithDate:[NSDate date]
-                                                 completion:^(BOOL success, NSString *_Nullable message) {
+            //  东8区
+            NSTimeZone *zone = [NSTimeZone timeZoneForSecondsFromGMT:8 * 3600];
+            [[BCLRingManager shared] syncDeviceTimeWithTimeZoneWithDate:[NSDate date]
+                                                               timeZone:zone
+                                                             completion:^(BOOL success, NSString *_Nullable message) {
                 if (success) {
                     [BDLog info:@"同步时间成功"];
                 } else {
                     [BDLog info:[NSString stringWithFormat:@"同步时间失败：%@", message]];
                 }
             }];
+//            [[BCLRingManager shared] syncDeviceTimeWithDate:[NSDate date]
+//                                                 completion:^(BOOL success, NSString *_Nullable message) {
+//                if (success) {
+//                    [BDLog info:@"同步时间成功"];
+//                } else {
+//                    [BDLog info:[NSString stringWithFormat:@"同步时间失败：%@", message]];
+//                }
+//            }];
             break;
         }
 
@@ -124,9 +135,9 @@
 
         case 1008:{
             [BDLog info:@"体温"];
-            [[BCLRingManager shared] readTemperatureWithCompletion:^(BOOL success, float temperature) {
+            [[BCLRingManager shared] readTemperatureWithCompletion:^(BOOL success, NSInteger temperature) {
                 if (success) {
-                    [BDLog info:[NSString stringWithFormat:@"设备温度：%.1f°C", temperature]];
+                    [BDLog info:[NSString stringWithFormat:@"设备温度：%.1f°C", temperature *0.01]];
                 } else {
                     [BDLog info:@"读取温度失败"];
                 }
