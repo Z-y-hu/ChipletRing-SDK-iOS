@@ -706,7 +706,7 @@ extension RingsSDK.RingManager {
   public func reset(resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)
   public func setFrequency(time: Swift.Int, resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)
   public func readFrequency(resultBlock: @escaping (Swift.Result<Swift.Int, RingsSDK.ReadError>) -> Swift.Void)
-  public func syncTime(date: Foundation.Date, timeZone: Foundation.TimeZone = TimeZone.current, resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)
+  public func syncTime(date: Foundation.Date, timeZone: RingsSDK.RingTimeZone = .East8, resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)
   public func syncTime(date: Foundation.Date, resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)
   public func readTime(resultBlock: @escaping (Swift.Result<Foundation.TimeInterval, RingsSDK.ReadError>) -> Swift.Void)
   public func setBluetoothName(name: Swift.String, resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)
@@ -924,6 +924,38 @@ public enum ApolloOTAStatus {
   case error(Swift.String, Swift.Int)
   case rebootSuccess
   case rebootFailed
+}
+public enum RingTimeZone : Swift.Int {
+  case UTC
+  case East1
+  case East2
+  case East3
+  case East4
+  case East5
+  case East6
+  case East7
+  case East8
+  case East9
+  case East10
+  case East11
+  case East12
+  case West12
+  case West11
+  case West10
+  case West9
+  case West8
+  case West7
+  case West6
+  case West5
+  case West4
+  case West3
+  case West2
+  case West1
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 public protocol LocaleConvertible {
   func toLocale() -> Foundation.Locale
@@ -3081,6 +3113,9 @@ extension RingsSDK.ReadDataResult : Swift.Equatable {}
 extension RingsSDK.ReadDataResult : Swift.Hashable {}
 extension RingsSDK.OTAError : Swift.Equatable {}
 extension RingsSDK.OTAError : Swift.Hashable {}
+extension RingsSDK.RingTimeZone : Swift.Equatable {}
+extension RingsSDK.RingTimeZone : Swift.Hashable {}
+extension RingsSDK.RingTimeZone : Swift.RawRepresentable {}
 extension RingsSDK.Locales : Swift.Equatable {}
 extension RingsSDK.Locales : Swift.Hashable {}
 extension RingsSDK.Locales : Swift.RawRepresentable {}

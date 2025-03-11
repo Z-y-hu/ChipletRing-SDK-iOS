@@ -20,7 +20,8 @@
 		A74190282AD06B6200C2D6EE /* 2.3.7.511S.hex16 in Resources */ = {isa = PBXBuildFile; fileRef = A74190272AD06B6200C2D6EE /* 2.3.7.511S.hex16 */; };
 		B2599C0D4BCD9EB5C500D838 /* Pods_Rings_SDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E94F2FD99676EDEAD0D623 /* Pods_Rings_SDK_Tests.framework */; };
 		FD3E74C42D662D64008EF331 /* LogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E74C32D662D64008EF331 /* LogVC.swift */; };
-		FDA3E9B52D30C5AB00FCCF54 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA3E9B42D30C5AB00FCCF54 /* TestVC.swift */; };
+		FD7BFD912D7FE1F60022DA1D /* DeviceTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7BFD902D7FE1F60022DA1D /* DeviceTableVC.swift */; };
+		FDA3E9B52D30C5AB00FCCF54 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA3E9B42D30C5AB00FCCF54 /* MainVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,9 +72,10 @@
 		C0520B1282C33933D12A2AAB /* Pods-Rings-SDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Example/Pods-Rings-SDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		FD3E74C32D662D64008EF331 /* LogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogVC.swift; sourceTree = "<group>"; };
 		FD534EE12D7558BD00709983 /* RingsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RingsSDK.framework; path = frameworks/RingsSDK/RingsSDK.framework; sourceTree = "<group>"; };
+		FD7BFD902D7FE1F60022DA1D /* DeviceTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableVC.swift; sourceTree = "<group>"; };
 		FD9ED5D22D75CF6500748D2C /* amOtaApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = amOtaApi.framework; path = Frameworks/ApolloSDK/amOtaApi.framework; sourceTree = "<group>"; };
 		FD9ED5D62D75CF6F00748D2C /* RingsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RingsSDK.framework; path = Frameworks/RingsSDK/RingsSDK.framework; sourceTree = "<group>"; };
-		FDA3E9B42D30C5AB00FCCF54 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		FDA3E9B42D30C5AB00FCCF54 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		FFECF31F6947A80554C85442 /* Pods-Rings-SDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rings-SDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Rings-SDK_Tests/Pods-Rings-SDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,7 +129,8 @@
 				16DF7A5D2CDB650900D633C9 /* OTA_test.hex16 */,
 				16C4E13E2CDF493E00312256 /* area.json */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				FDA3E9B42D30C5AB00FCCF54 /* TestVC.swift */,
+				FDA3E9B42D30C5AB00FCCF54 /* MainVC.swift */,
+				FD7BFD902D7FE1F60022DA1D /* DeviceTableVC.swift */,
 				FD3E74C32D662D64008EF331 /* LogVC.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -385,8 +388,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD3E74C42D662D64008EF331 /* LogVC.swift in Sources */,
-				FDA3E9B52D30C5AB00FCCF54 /* TestVC.swift in Sources */,
+				FDA3E9B52D30C5AB00FCCF54 /* MainVC.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				FD7BFD912D7FE1F60022DA1D /* DeviceTableVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

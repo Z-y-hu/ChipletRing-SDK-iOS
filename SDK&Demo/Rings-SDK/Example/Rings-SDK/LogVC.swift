@@ -18,7 +18,7 @@ class LogVC: UIViewController {
 
     public func readLogContent() {
         clearTodayLogFile()
-        BDLogger.info("-------------日志-----------------")
+        
         readLog()
     }
 
@@ -61,8 +61,6 @@ extension LogVC {
         if let fileName = fileName, !fileName.isEmpty {
             finalFileName = fileName
         } else {
-            // 需要先 import SwiftDate，使用 .toFormat("yyyy-MM-dd") 时
-            // 确保全局已配置好 SwiftDate 的默认region，如果没有可改成常规方法
             let dateString = Date().toFormat("yyyy-MM-dd")
             finalFileName = "\(dateString).log"
         }
@@ -70,14 +68,13 @@ extension LogVC {
         let pathURL = URL(fileURLWithPath: directoryPath)
         let logFileURL = pathURL.appendingPathComponent(finalFileName)
 
-        // 检查文件是否存在
         guard FileManager.default.fileExists(atPath: logFileURL.path) else {
             print("⚠️ 日志文件不存在: \(logFileURL.path)")
+            BDLogger.info("-------------日志-----------------")
             return ""
         }
 
         do {
-            // 读取文件内容
             let content = try String(contentsOf: logFileURL, encoding: .utf8)
             return content
         } catch {
@@ -91,20 +88,15 @@ extension LogVC {
     /// - Returns: 是否删除成功
     @discardableResult
     public func clearTodayLogFile(directoryPath: String = defaultLogDirectoryPath) -> Bool {
-        // 生成今天的日志文件名，例如 "2025-01-10.log"
         let dateString = Date().toFormat("yyyy-MM-dd")
         let fileName = "\(dateString).log"
 
         let pathURL = URL(fileURLWithPath: directoryPath)
         let logFileURL = pathURL.appendingPathComponent(fileName)
-
-        // 如果文件不存在，直接返回 false 或视需求返回 true
         guard FileManager.default.fileExists(atPath: logFileURL.path) else {
             print("⚠️ 当日日志不存在：\(logFileURL.path)")
             return false
         }
-
-        // 删除文件
         do {
             try FileManager.default.removeItem(at: logFileURL)
             return true

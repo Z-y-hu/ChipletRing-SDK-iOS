@@ -273,16 +273,18 @@ pod 'ApolloOTA', :path => 'Frameworks/ApolloSDK'
 ```
 
 注意事项：调用此接口 ，需保证与戒指处于连接状态
+
 参数说明：无
+
 返回值：无
 
 #### 2.1.1 同步时间+时区
 
 接口说明： 同步时间，可自行配置时区（默认东八区）
-接口声明：
 
+接口声明：
 ```swift
-	RingManager.shared.syncTime(date: Date(), timeZone: TimeZone.current) { res in
+	RingManager.shared.syncTime(date: Date(), timeZone: RingTimeZone.East8) { res in
 	                  switch res {
 	                  case .success(let isSuccess):
 	                      print("同步时间结果======\(isSuccess)")
@@ -292,7 +294,9 @@ pod 'ApolloOTA', :path => 'Frameworks/ApolloSDK'
 	         }
 ```
 注意事项：调用此接口 ，需保证与戒指处于连接状态
-参数说明：date：时间，timeZone：时区
+
+参数说明：date：时间，timeZone：RingTimeZone枚举类型
+
 返回值：无
 
 #### 2.2 读取时间
