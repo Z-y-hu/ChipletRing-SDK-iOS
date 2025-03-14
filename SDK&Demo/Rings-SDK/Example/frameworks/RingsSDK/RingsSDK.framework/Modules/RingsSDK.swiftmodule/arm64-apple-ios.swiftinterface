@@ -925,32 +925,32 @@ public enum ApolloOTAStatus {
   case rebootSuccess
   case rebootFailed
 }
-public enum RingTimeZone : Swift.Int {
-  case UTC
-  case East1
-  case East2
-  case East3
-  case East4
-  case East5
-  case East6
-  case East7
-  case East8
-  case East9
-  case East10
-  case East11
-  case East12
-  case West12
-  case West11
-  case West10
-  case West9
-  case West8
-  case West7
-  case West6
-  case West5
-  case West4
-  case West3
-  case West2
-  case West1
+@objc public enum RingTimeZone : Swift.Int {
+  case UTC = 0x00
+  case East1 = 0x01
+  case East2 = 0x02
+  case East3 = 0x03
+  case East4 = 0x04
+  case East5 = 0x05
+  case East6 = 0x06
+  case East7 = 0x07
+  case East8 = 0x08
+  case East9 = 0x09
+  case East10 = 0x0A
+  case East11 = 0x0B
+  case East12 = 0x0C
+  case West12 = 0xF4
+  case West11 = 0xF5
+  case West10 = 0xF6
+  case West9 = 0xF7
+  case West8 = 0xF8
+  case West7 = 0xF9
+  case West6 = 0xFA
+  case West5 = 0xFB
+  case West4 = 0xFC
+  case West3 = 0xFD
+  case West2 = 0xFE
+  case West1 = 0xFF
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {

@@ -42,7 +42,7 @@
             [BDLog info:@"同步时间"];
             //  东8区
             [[BCLRingManager shared] syncDeviceTimeWithTimeZoneWithDate:[NSDate date]
-                                                               timeZone:NSTimeZone.systemTimeZone
+                                                               timeZone:RingTimeZoneEast7
                                                              completion:^(BOOL success, NSString *_Nullable message) {
                 if (success) {
                     [BDLog info:@"同步时间成功"];
@@ -277,7 +277,12 @@
 
         case 1017:{
             [BDLog info:@"睡眠数据"];
-            RingSleepModel *sleepData = [[BCLRingManager shared] calculateSleepForDate:[NSDate date]];
+
+            NSString *string = @"2025-3-14 00:00:00";
+            NSDateFormatter *format = [[NSDateFormatter alloc] init];
+            format.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+            NSDate *date = [format dateFromString:string];
+            RingSleepModel *sleepData = [[BCLRingManager shared] calculateSleepForDate:date];
 
             if (sleepData) {
                 // 零星睡眠时间

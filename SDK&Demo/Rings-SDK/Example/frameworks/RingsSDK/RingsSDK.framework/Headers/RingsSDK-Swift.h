@@ -447,6 +447,34 @@ SWIFT_CLASS("_TtC8RingsSDK14RingSleepModel")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+typedef SWIFT_ENUM(NSInteger, RingTimeZone, open) {
+  RingTimeZoneUTC = 0x00,
+  RingTimeZoneEast1 = 0x01,
+  RingTimeZoneEast2 = 0x02,
+  RingTimeZoneEast3 = 0x03,
+  RingTimeZoneEast4 = 0x04,
+  RingTimeZoneEast5 = 0x05,
+  RingTimeZoneEast6 = 0x06,
+  RingTimeZoneEast7 = 0x07,
+  RingTimeZoneEast8 = 0x08,
+  RingTimeZoneEast9 = 0x09,
+  RingTimeZoneEast10 = 0x0A,
+  RingTimeZoneEast11 = 0x0B,
+  RingTimeZoneEast12 = 0x0C,
+  RingTimeZoneWest12 = 0xF4,
+  RingTimeZoneWest11 = 0xF5,
+  RingTimeZoneWest10 = 0xF6,
+  RingTimeZoneWest9 = 0xF7,
+  RingTimeZoneWest8 = 0xF8,
+  RingTimeZoneWest7 = 0xF9,
+  RingTimeZoneWest6 = 0xFA,
+  RingTimeZoneWest5 = 0xFB,
+  RingTimeZoneWest4 = 0xFC,
+  RingTimeZoneWest3 = 0xFD,
+  RingTimeZoneWest2 = 0xFE,
+  RingTimeZoneWest1 = 0xFF,
+};
+
 
 #endif
 #if __has_attribute(external_source_symbol)

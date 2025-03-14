@@ -80,7 +80,7 @@ import RingsSDK
     }
 
     // 同步设备时间（时区）
-    @objc public func syncDeviceTimeWithTimeZone(date: Date, timeZone: TimeZone, completion: @escaping (_ success: Bool, _ message: String?) -> Void) {
+    @objc public func syncDeviceTimeWithTimeZone(date: Date, timeZone: RingTimeZone, completion: @escaping (_ success: Bool, _ message: String?) -> Void) {
         RingManager.shared.syncTime(date: date, timeZone: timeZone) { res in
             switch res {
             case let .success(value):
