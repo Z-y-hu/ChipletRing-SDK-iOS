@@ -681,8 +681,9 @@ extension RingsSDK.RingManager {
   public func startScan(callBackBlock: (([RingsSDK.DeviceInfo]?) -> Swift.Void)? = nil)
   public func stopScan()
   public func startConnect(deviceUUID: Swift.String, resultBlock: @escaping (Swift.Result<RingsSDK.DeviceInfo, RingsSDK.ReadError>) -> Swift.Void)
+  public func startConnect(mac: Swift.String, timeout: Foundation.TimeInterval = 10, resultBlock: @escaping (Swift.Result<RingsSDK.DeviceInfo, RingsSDK.ReadError>) -> Swift.Void)
   public func disconnect()
-  public func reconnect(deviceUUID: Swift.String)
+  public func reconnect(deviceUUID: Swift.String, resultBlock: @escaping (Swift.Result<RingsSDK.DeviceInfo, RingsSDK.ReadError>) -> Swift.Void)
   public func startReConnect(deviceUUID: Swift.String, deviceName: Swift.String)
   public func startConnect(device: CoreBluetooth.CBPeripheral)
 }
@@ -887,6 +888,7 @@ public enum ReadError : Swift.Error {
   case invalidData
   case outOfArray
   case dataCollectionTimeout
+  case connectTimeout
   public static func == (a: RingsSDK.ReadError, b: RingsSDK.ReadError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -1976,6 +1978,9 @@ final public class GoogleCloudDestination : RingsSDK.BaseDestination {
   @objc public var advertisementData: [Swift.String : Any]
   @objc public var rssi: Foundation.NSNumber
   @objc public var uuidString: Swift.String {
+    @objc get
+  }
+  @objc public var macAddress: Swift.String {
     @objc get
   }
   @objc public var peripheralName: Swift.String? {

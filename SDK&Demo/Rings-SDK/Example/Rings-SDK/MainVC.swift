@@ -72,7 +72,14 @@ class MainVC: UIViewController {
                 return
             }
             BDLogger.info("开始尝试重连设备UUID:\(deviceUUID)")
-            RingManager.shared.reconnect(deviceUUID: deviceUUID)
+            RingManager.shared.reconnect(deviceUUID: deviceUUID, resultBlock: { res in
+                switch res {
+                case let .success(deviceInfo):
+                    BDLogger.info("已连接设备 =========>\(String(describing: deviceInfo.peripheral.name))")
+                case let .failure(error):
+                    BDLogger.info("连接失败 ========> \(error)连接状态\(RingManager.shared.isDidConnect)")
+                }
+            })
         }
     }
 
@@ -511,6 +518,16 @@ class MainVC: UIViewController {
             autoConnect = !autoConnect
             QMUITips.show(withText: autoConnect ? "自动重连已开启" : "自动重连已关闭")
             break
+        case 1028: // 通过mac地址链接戒指
+            RingManager.shared.startConnect(mac: "B0:04:70:00:00:0B", timeout: 15) { res in
+                switch res {
+                case let .success(deviceInfo):
+                    BDLogger.info("已连接设备 =========>\(String(describing: deviceInfo.peripheral.name))")
+                    BDLogger.info("连接状态 =========>\(RingManager.shared.isDidConnect)")
+                case let .failure(error):
+                    BDLogger.info("连接失败 ========> \(error)连接状态\(RingManager.shared.isDidConnect)")
+                }
+            }
         default:
             break
         }

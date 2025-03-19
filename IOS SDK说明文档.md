@@ -199,6 +199,29 @@ pod 'ApolloOTA', :path => 'Frameworks/ApolloSDK'
 参数说明：无
 返回值：无
 
+#### 1.4.1 通过MAC连接戒指的示例
+
+接口说明：通过设备的mac地址来连接指定设备,并且可以设置连接超时时间(默认10s)
+
+接口声明：
+
+```swift
+	RingManager.shared.startConnect(mac: "00:00:00:00:00:00", timeout: 15) { res in
+                switch res {
+                case let .success(deviceInfo):
+                    BDLogger.info("已连接设备 =========>\(String(describing: deviceInfo.peripheral.name))")
+                case let .failure(error):
+                    BDLogger.info("连接失败 ========> \(error)连接状态\(RingManager.shared.isDidConnect)")
+                }
+            }
+```
+
+注意事项：无
+
+参数说明：mac为设备的mac地址，timeout为连接超时时间
+
+返回值：success为连接成功后的设备数据模型，包含设备的uuid、mac地址、设备名称等信息,失败返回error
+
 #### 1.5 断开蓝牙
 
 接口说明：断开当前设备的连接

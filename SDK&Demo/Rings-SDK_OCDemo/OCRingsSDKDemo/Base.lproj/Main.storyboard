@@ -56,6 +56,19 @@
                                     <action selector="btnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wAa-KK-FgF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AQ-jO-Mg8" userLabel="3_Btn">
+                                <rect key="frame" x="15" y="183" width="92" height="40"/>
+                                <color key="backgroundColor" red="0.81960785390000002" green="0.84705877299999999" blue="0.85882353779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KZa-he-AFy"/>
+                                    <constraint firstAttribute="width" constant="92" id="Vlm-Kn-aGc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="读取时间"/>
+                                <connections>
+                                    <action selector="btnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E1i-6o-oyz"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efk-j7-kqP" userLabel="4_Btn">
                                 <rect key="frame" x="150.66666666666666" y="183" width="92" height="40"/>
                                 <color key="backgroundColor" red="0.81960785390000002" green="0.84705877299999999" blue="0.85882353779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -67,6 +80,19 @@
                                 <buttonConfiguration key="configuration" style="plain" title="实时步数"/>
                                 <connections>
                                     <action selector="btnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wok-L2-F6s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKJ-m1-PDf" userLabel="5_Btn">
+                                <rect key="frame" x="286" y="183" width="92" height="40"/>
+                                <color key="backgroundColor" red="0.81960785390000002" green="0.84705877299999999" blue="0.85882353779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Vcm-w6-krv"/>
+                                    <constraint firstAttribute="width" constant="92" id="vsJ-Pc-tgf"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="清除步数"/>
+                                <connections>
+                                    <action selector="btnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="op7-N4-dAZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1006" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCS-hT-YZ3" userLabel="6_Btn">
@@ -329,7 +355,20 @@
                                     <action selector="btnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8tc-aC-jxW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuU-VT-QFR" userLabel="26_Btn">
+                            <button opaque="NO" tag="1026" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRm-Fv-bOz" userLabel="26_Btn">
+                                <rect key="frame" x="286" y="603" width="92" height="40"/>
+                                <color key="backgroundColor" red="0.81960785390000002" green="0.84705877299999999" blue="0.85882353779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VTs-2s-FPc"/>
+                                    <constraint firstAttribute="width" constant="92" id="ndO-Nn-crq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Mac连接"/>
+                                <connections>
+                                    <action selector="btnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rJP-PP-yYp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuU-VT-QFR" userLabel="log_Btn">
                                 <rect key="frame" x="286" y="734" width="92" height="40"/>
                                 <color key="backgroundColor" red="0.81960785390000002" green="0.84705877299999999" blue="0.85882353779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -340,32 +379,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="日志信息"/>
                                 <connections>
                                     <action selector="logAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BZq-Wp-Ywt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKJ-m1-PDf" userLabel="5_Btn">
-                                <rect key="frame" x="286" y="183" width="92" height="40"/>
-                                <color key="backgroundColor" red="0.81960785390000002" green="0.84705877299999999" blue="0.85882353779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Vcm-w6-krv"/>
-                                    <constraint firstAttribute="width" constant="92" id="vsJ-Pc-tgf"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="清除步数"/>
-                                <connections>
-                                    <action selector="btnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="op7-N4-dAZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AQ-jO-Mg8" userLabel="3_Btn">
-                                <rect key="frame" x="15" y="183" width="92" height="40"/>
-                                <color key="backgroundColor" red="0.81960785390000002" green="0.84705877299999999" blue="0.85882353779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="KZa-he-AFy"/>
-                                    <constraint firstAttribute="width" constant="92" id="Vlm-Kn-aGc"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="读取时间"/>
-                                <connections>
-                                    <action selector="btnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E1i-6o-oyz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -384,6 +397,7 @@
                             <constraint firstItem="efk-j7-kqP" firstAttribute="centerX" secondItem="1wW-qh-k9w" secondAttribute="centerX" id="Agq-y1-VGn"/>
                             <constraint firstItem="NTe-Ch-9sg" firstAttribute="centerY" secondItem="naF-2e-1uQ" secondAttribute="centerY" id="AvC-b3-AGW"/>
                             <constraint firstItem="AWu-lr-BKh" firstAttribute="centerX" secondItem="ikB-tE-kgf" secondAttribute="centerX" id="BBf-Yg-Yag"/>
+                            <constraint firstItem="GRm-Fv-bOz" firstAttribute="centerY" secondItem="6lb-gb-16e" secondAttribute="centerY" id="CG1-Ae-gOl"/>
                             <constraint firstItem="fMn-fO-kLR" firstAttribute="top" secondItem="fgE-8t-glT" secondAttribute="bottom" constant="20" id="Eus-Lg-q1Z"/>
                             <constraint firstItem="IBD-z8-ipu" firstAttribute="centerY" secondItem="Tto-Cw-b39" secondAttribute="centerY" id="GVx-os-QkJ"/>
                             <constraint firstItem="Bjm-fR-kBu" firstAttribute="centerX" secondItem="efk-j7-kqP" secondAttribute="centerX" id="Hpv-8y-spV"/>
@@ -418,6 +432,7 @@
                             <constraint firstItem="GU1-vD-KEf" firstAttribute="centerY" secondItem="KCS-hT-YZ3" secondAttribute="centerY" id="h8P-Zx-aS3"/>
                             <constraint firstItem="1AQ-jO-Mg8" firstAttribute="centerX" secondItem="naF-2e-1uQ" secondAttribute="centerX" id="hjy-3P-2um"/>
                             <constraint firstItem="ov0-Bb-Yga" firstAttribute="centerY" secondItem="Tto-Cw-b39" secondAttribute="centerY" id="ip2-ar-ZCn"/>
+                            <constraint firstItem="GRm-Fv-bOz" firstAttribute="centerX" secondItem="ov0-Bb-Yga" secondAttribute="centerX" id="ldG-t0-JjV"/>
                             <constraint firstItem="IBD-z8-ipu" firstAttribute="centerX" secondItem="jJq-gG-uux" secondAttribute="centerX" id="mbb-PR-9VL"/>
                             <constraint firstItem="fMn-fO-kLR" firstAttribute="centerX" secondItem="fgE-8t-glT" secondAttribute="centerX" id="nhC-2e-cr4"/>
                             <constraint firstItem="HKJ-m1-PDf" firstAttribute="centerY" secondItem="1AQ-jO-Mg8" secondAttribute="centerY" id="nqn-4s-Omz"/>

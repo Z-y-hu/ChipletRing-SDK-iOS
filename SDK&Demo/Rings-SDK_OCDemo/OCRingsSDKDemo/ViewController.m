@@ -21,6 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.logVC clearTodayLog];
+
+    [[BCLRingManager shared] setupConnectionStateMonitorWithStateChanged:^(BOOL isConnected) {
+        if (isConnected) {
+            [BDLog info:@"设备已连接"];
+        } else {
+            [BDLog info:@"设备已断开"];
+        }
+    }];
 }
 
 - (IBAction)btnAction:(UIButton *)sender
@@ -42,7 +50,7 @@
             [BDLog info:@"同步时间"];
             //  东8区
             [[BCLRingManager shared] syncDeviceTimeWithTimeZoneWithDate:[NSDate date]
-                                                               timeZone:RingTimeZoneEast7
+                                                               timeZone:RingTimeZoneEast8
                                                              completion:^(BOOL success, NSString *_Nullable message) {
                 if (success) {
                     [BDLog info:@"同步时间成功"];
@@ -277,12 +285,7 @@
 
         case 1017:{
             [BDLog info:@"睡眠数据"];
-
-            NSString *string = @"2025-3-14 00:00:00";
-            NSDateFormatter *format = [[NSDateFormatter alloc] init];
-            format.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-            NSDate *date = [format dateFromString:string];
-            RingSleepModel *sleepData = [[BCLRingManager shared] calculateSleepForDate:date];
+            RingSleepModel *sleepData = [[BCLRingManager shared] calculateSleepForDate:[NSDate date]];
 
             if (sleepData) {
                 // 零星睡眠时间
@@ -370,6 +373,20 @@
                 }
             }];
             break;
+        }
+
+        case 1026:{
+            [BDLog info:@"通过指定mac地址链接蓝牙设备"];
+            [[BCLRingManager shared] connectDeviceWithMacAddress:@"B0:04:70:00:00:1B"
+                                                         timeout:15
+                                                      completion:^(BOOL success, NSString *_Nullable deviceName, NSString *_Nullable error) {
+                if (success) {
+                    [BDLog info:@"连接成功"];
+                    [BDLog info:[NSString stringWithFormat:@"设备名称：%@", deviceName]];
+                } else {
+                    [BDLog info:[NSString stringWithFormat:@"连接失败：%@", error]];
+                }
+            }];
         }
 
         default:

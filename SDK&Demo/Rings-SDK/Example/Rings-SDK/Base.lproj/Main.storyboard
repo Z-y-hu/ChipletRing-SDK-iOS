@@ -472,15 +472,16 @@
                                                     <action selector="clickAction:" destination="A3r-hp-fV3" eventType="touchUpInside" id="oYa-mu-Ygu"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" tag="1028" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVo-Kk-Sbc" userLabel="28_Btn">
+                                            <button opaque="NO" tag="1028" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVo-Kk-Sbc" userLabel="28_Btn">
                                                 <rect key="frame" x="142.5" y="510" width="90" height="40"/>
                                                 <color key="backgroundColor" red="0.81960785390000002" green="0.84705877299999999" blue="0.85882353779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="Iwm-KN-7QR"/>
                                                     <constraint firstAttribute="height" constant="40" id="a9l-5H-omg"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
+                                                <state key="normal" title="通过Mac地址连接">
                                                     <color key="titleColor" red="0.0" green="0.45882352939999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>

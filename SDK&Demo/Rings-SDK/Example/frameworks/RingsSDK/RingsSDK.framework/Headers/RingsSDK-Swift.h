@@ -344,6 +344,7 @@ SWIFT_CLASS("_TtC8RingsSDK10DeviceInfo")
 @property (nonatomic, copy) NSDictionary<NSString *, id> * _Nonnull advertisementData;
 @property (nonatomic, strong) NSNumber * _Nonnull rssi;
 @property (nonatomic, readonly, copy) NSString * _Nonnull uuidString;
+@property (nonatomic, readonly, copy) NSString * _Nonnull macAddress;
 @property (nonatomic, readonly, copy) NSString * _Nullable peripheralName;
 @property (nonatomic, strong) CBPeripheral * _Nonnull peripheral;
 - (nonnull instancetype)initWithPeripheral:(CBPeripheral * _Nonnull)peripheral advertisementData:(NSDictionary<NSString *, id> * _Nonnull)advertisementData rssi:(NSNumber * _Nonnull)rssi OBJC_DESIGNATED_INITIALIZER;

@@ -59,6 +59,21 @@ import RingsSDK
         })
     }
 
+    // 通过指定Mac地址连接设备
+    @objc public func connectDevice(withMacAddress mac: String, timeout: TimeInterval, completion: @escaping (_ success: Bool, _ deviceName: String?, _ error: String?) -> Void) {
+        RingManager.shared.startConnect(mac: mac, timeout: timeout) { res in
+            switch res {
+            case let .success(deviceInfo):
+                BDLogger.info("已连接设备 =========>\(String(describing: deviceInfo.peripheral.name))")
+                BDLogger.info("连接状态 =========>\(RingManager.shared.isDidConnect)")
+                completion(true, deviceInfo.peripheral.name, nil)
+            case let .failure(error):
+                BDLogger.info("连接失败 ========> \(error)连接状态\(RingManager.shared.isDidConnect)")
+                completion(false, nil, error.localizedDescription)
+            }
+        }
+    }
+
     // 断开蓝牙设备
     @objc public func disconnect() {
         RingManager.shared.disconnect()
