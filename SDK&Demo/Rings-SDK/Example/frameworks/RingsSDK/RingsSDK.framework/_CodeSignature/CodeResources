@@ -18,7 +18,7 @@
 		</data>
 		<key>Frameworks/amOtaApi.framework/amOtaApi</key>
 		<data>
-		leG2Osrra6snxDbQ+Y7HdpWQhYQ=
+		zOrDRsEsabdajAzV4J/YZHsS3SE=
 		</data>
 		<key>Frameworks/amOtaApi.framework/amOtaApi-Info.plist</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/RingsSDK-Swift.h</key>
 		<data>
-		/ZnrXM926AIQzI8mE/gsuu5tusE=
+		1nQg4ls/F3pG1MCaNX70mBABJJw=
 		</data>
 		<key>Headers/RingsSDK.h</key>
 		<data>
@@ -46,27 +46,27 @@
 		</data>
 		<key>Modules/RingsSDK.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		oX4x03Zy9RQBSRa/RJ/wCwO7Ga8=
+		JCiGaXmFDx6X4fzYWSkSOPdc5fA=
 		</data>
 		<key>Modules/RingsSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		/vCi4H19MEegS1ZOo1ppU/2OOjo=
+		QeazNim3em++msDC/rS4r9mEXzM=
 		</data>
 		<key>Modules/RingsSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		X+QRCo652A+28RxNstMrYp6FTPQ=
+		p+lq2nSfg7UbHpbO3qddq1QCdXM=
 		</data>
 		<key>Modules/RingsSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		3fKnJ9JRNDWwYO0dl6Ct27ljE/I=
+		pqFRMb8MUnJLrb2FkPnYf3kfSjE=
 		</data>
 		<key>Modules/RingsSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		X+QRCo652A+28RxNstMrYp6FTPQ=
+		p+lq2nSfg7UbHpbO3qddq1QCdXM=
 		</data>
 		<key>Modules/RingsSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		wQpJbGqgjW67xOeDnUbsXJjgmOw=
+		GwdqfmnGNnMMmByOec1grVV/KOs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -604,11 +604,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			leG2Osrra6snxDbQ+Y7HdpWQhYQ=
+			zOrDRsEsabdajAzV4J/YZHsS3SE=
 			</data>
 			<key>hash2</key>
 			<data>
-			ErJRnClaFV1o7Cnai8Pb31EFsXLITquIeqNLj6qBv98=
+			kXeZbRpnpwmKOkCotFXW+ljIqxj+VmfLzXCnaI/q8+o=
 			</data>
 		</dict>
 		<key>Frameworks/amOtaApi.framework/amOtaApi-Info.plist</key>
@@ -648,11 +648,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/ZnrXM926AIQzI8mE/gsuu5tusE=
+			1nQg4ls/F3pG1MCaNX70mBABJJw=
 			</data>
 			<key>hash2</key>
 			<data>
-			+61DQE2DN9ZnEavn2gToZWkt7CYUh8Y2BrA2p/sX+5U=
+			A/kt02NJ8A+LmkBGfcFUoUVrEx7R9FFpOaS5I5Zy7gA=
 			</data>
 		</dict>
 		<key>Headers/RingsSDK.h</key>
@@ -670,66 +670,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			oX4x03Zy9RQBSRa/RJ/wCwO7Ga8=
+			JCiGaXmFDx6X4fzYWSkSOPdc5fA=
 			</data>
 			<key>hash2</key>
 			<data>
-			wVuMAcQZxj8/yFtpd4Ebfc0qScikZ/2Ry0n/0RTKMI8=
+			h9Thkvfn4MNog0my/qyo47QkGle08i/CaLjzTs3LErU=
 			</data>
 		</dict>
 		<key>Modules/RingsSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/vCi4H19MEegS1ZOo1ppU/2OOjo=
+			QeazNim3em++msDC/rS4r9mEXzM=
 			</data>
 			<key>hash2</key>
 			<data>
-			r9gRfdjdezXZB5oxeTcAfh4AozuhHqyHjXth9WA3CYQ=
+			mKjUSowNt/9JMeCdIJiMg8chTvRBLqJQXtgWCw1FW6E=
 			</data>
 		</dict>
 		<key>Modules/RingsSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			X+QRCo652A+28RxNstMrYp6FTPQ=
+			p+lq2nSfg7UbHpbO3qddq1QCdXM=
 			</data>
 			<key>hash2</key>
 			<data>
-			e1syerBNqRdkQwq0WDLT6zpXcN2GRpOMQkWUYJ6d3DM=
+			btw8+HlT7XNMTJPCoUJGUqYoq71l1fYtXMi/bGkcRC8=
 			</data>
 		</dict>
 		<key>Modules/RingsSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			3fKnJ9JRNDWwYO0dl6Ct27ljE/I=
+			pqFRMb8MUnJLrb2FkPnYf3kfSjE=
 			</data>
 			<key>hash2</key>
 			<data>
-			KwpUMUR+AykjwRhfifXcMWpzZ3cQuCb/CyJpDK6VsjM=
+			ZY05aE3u1t2li5SbOcgLMI1IP1909J5AiUeMM8U1tJo=
 			</data>
 		</dict>
 		<key>Modules/RingsSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			X+QRCo652A+28RxNstMrYp6FTPQ=
+			p+lq2nSfg7UbHpbO3qddq1QCdXM=
 			</data>
 			<key>hash2</key>
 			<data>
-			e1syerBNqRdkQwq0WDLT6zpXcN2GRpOMQkWUYJ6d3DM=
+			btw8+HlT7XNMTJPCoUJGUqYoq71l1fYtXMi/bGkcRC8=
 			</data>
 		</dict>
 		<key>Modules/RingsSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wQpJbGqgjW67xOeDnUbsXJjgmOw=
+			GwdqfmnGNnMMmByOec1grVV/KOs=
 			</data>
 			<key>hash2</key>
 			<data>
-			chOcHMezRgO6kMJj2mYQv+Nsc4+DU/23e0YEymv1Cvw=
+			q7zipVVWT4BRCLOzcg20XR1tjWYLnFdfa3D19y3NZcA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

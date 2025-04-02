@@ -361,6 +361,7 @@ SWIFT_CLASS("_TtC8RingsSDK13RingDBManager")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSData;
 
 SWIFT_CLASS("_TtC8RingsSDK13RingDataModel")
 @interface RingDataModel : NSObject
@@ -373,10 +374,10 @@ SWIFT_CLASS("_TtC8RingsSDK13RingDataModel")
 @property (nonatomic) NSInteger hrv;
 @property (nonatomic) NSInteger mentalStress;
 @property (nonatomic) float temp;
-@property (nonatomic) BOOL isRunning;
+@property (nonatomic) NSInteger isRunning;
 @property (nonatomic) NSInteger sleepType;
 @property (nonatomic) NSInteger RRNums;
-@property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull rrs;
+@property (nonatomic, copy) NSData * _Nullable rrs;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithBytes:(NSArray<NSNumber *> * _Nonnull)bytes OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;

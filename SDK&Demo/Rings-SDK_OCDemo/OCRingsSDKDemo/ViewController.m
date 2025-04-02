@@ -232,6 +232,9 @@
                 [BDLog info:[NSString stringWithFormat:@"HRV：%ld", (long)data.hrv]];
                 [BDLog info:[NSString stringWithFormat:@"步数：%d", data.stepsOfTheDay]];
                 [BDLog info:[NSString stringWithFormat:@"温度：%.2f", data.temp]];
+                [BDLog info:[NSString stringWithFormat:@"运动强度：%.ld", data.isRunning]];
+                [BDLog info:[NSString stringWithFormat:@"RRNumber：%ld", data.RRNums]];
+                [BDLog info:[NSString stringWithFormat:@"RRS：%@", data.rrs]];
             }
                                                          completion:^(BOOL success) {
                 if (success) {

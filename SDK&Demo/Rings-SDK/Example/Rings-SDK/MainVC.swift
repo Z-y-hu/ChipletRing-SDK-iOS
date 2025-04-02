@@ -86,6 +86,9 @@ class MainVC: UIViewController {
     //  更新设备信息
     func updateDeviceInfo() {
         guard let device = RingManager.shared.currentDevice else {
+            name_Label.text = "设备名字："
+            mac_Label.text = "Mac地址："
+            connectState_Label.text = "连接状态：未连接"
             return
         }
         name_Label.text = "设备名字：\(device.peripheral.name ?? "")"
@@ -151,8 +154,9 @@ class MainVC: UIViewController {
             BDLogger.info("=========>执行体温操作")
             RingManager.shared.readTemperature { res in
                 switch res {
-                case let .success(success):
-                    BDLogger.info("成功=====>\(Double(success) * 0.01)")
+                case let .success(temperature):
+                    BDLogger.info("温度：=====>\(temperature)")
+                    BDLogger.info("转换：=====>\(String(format: "%.2f", Double(temperature) * 0.01))℃")
                 case let .failure(failure):
                     BDLogger.info("失败=====>\(failure)")
                 }
@@ -264,6 +268,26 @@ class MainVC: UIViewController {
             break
         case 1013: // 读取全部数据
             BDLogger.info("=========>执行读取全部数据操作")
+//            let now = Date()
+//            var calendar = Calendar.current
+//            var comps = calendar.dateComponents([.year, .month, .day], from: now)
+//            comps.hour = 1
+//            comps.minute = 45
+//            guard let date = calendar.date(from: comps) else {
+//                BDLogger.error("时间转换失败")
+//                return
+//            }
+//            BDLogger.debug("目标时间戳：\(date.timeIntervalSince1970)")
+//            RingManager.shared.readAllHistoryDatas(targetTimeInterval: date.timeIntervalSince1970) { progress, dataModel in
+//                BDLogger.info("进度 =====>\(progress)==\(dataModel)")
+//            } resultBlock: { res in
+//                switch res {
+//                case let .success(success):
+//                    BDLogger.info("成功====>\(success)")
+//                case let .failure(failure):
+//                    BDLogger.info("失败====>\(failure)")
+//                }
+//            }
             RingManager.shared.readAllHistoryDatas { progress, dataModel in
                 BDLogger.info("进度 =====>\(progress)==\(dataModel)")
             } resultBlock: { res in
@@ -277,7 +301,17 @@ class MainVC: UIViewController {
             break
         case 1014: // 读取未上传数
             BDLogger.info("=========>执行读取未上传数据操作")
-            RingManager.shared.readNewHistoryDatas { progress, dataModel in
+            let now = Date()
+            var calendar = Calendar.current
+            var comps = calendar.dateComponents([.year, .month, .day], from: now)
+            comps.hour = 9
+            comps.minute = 0
+            guard let date = calendar.date(from: comps) else {
+                BDLogger.error("时间转换失败")
+                return
+            }
+            BDLogger.debug("目标时间戳：\(date.timeIntervalSince1970)")
+            RingManager.shared.readNewHistoryDatas(targetTimeInterval: date.timeIntervalSince1970) { progress, dataModel in
                 BDLogger.info("进度 =====>\(progress)==\(dataModel)")
             } resultBlock: { res in
                 switch res {
@@ -287,6 +321,17 @@ class MainVC: UIViewController {
                     BDLogger.info("失败====>\(failure)")
                 }
             }
+
+//            RingManager.shared.readNewHistoryDatas { progress, dataModel in
+//                BDLogger.info("进度 =====>\(progress)==\(dataModel)")
+//            } resultBlock: { res in
+//                switch res {
+//                case let .success(success):
+//                    BDLogger.info("成功====>\(success)")
+//                case let .failure(failure):
+//                    BDLogger.info("失败====>\(failure)")
+//                }
+//            }
             break
         case 1015: // 清除数据
             BDLogger.info("=========>执行清除数据操作")
@@ -378,6 +423,7 @@ class MainVC: UIViewController {
             break
         case 1021: // 读取睡眠数据
             BDLogger.info("=========>获取指定日期的睡眠数据")
+//            let date = Date("2025-04-01", format: "yyyy-MM-dd")
             let sleepModel = RingManager.shared.caculateSleep(targetDate: Date())
             BDLogger.info("睡眠数据\(sleepModel.description)")
             break
@@ -528,6 +574,30 @@ class MainVC: UIViewController {
                     BDLogger.info("连接失败 ========> \(error)连接状态\(RingManager.shared.isDidConnect)")
                 }
             }
+            break
+        case 1029: // 读取数据库最后一条数据
+            let model = RingDBManager.shared.getLatestObject()
+            BDLogger.info("数据库最后一条数据：\(String(describing: model?.description))")
+            break
+        case 1030: // (寿世)读取PPG数据
+            RingManager.shared.get_PPG_ShouShi(collectionTime: 30, waveformConfiguration: 1, progressConfiguration: 1, waveformSetting: 0, progressBlock: { progress in
+                BDLogger.info("进度：\(progress)")
+            }, tableBlock: { index, value, data in
+                BDLogger.info("波形：\(index) \(value) \(data)")
+            }, resultBlock: { result in
+                BDLogger.info("结果：\(result)")
+            })
+            break
+        case 1031: // (寿世)停止PPG采集
+            RingManager.shared.stop_PPG_ShouShi { result in
+                switch result {
+                case let .success(success):
+                    BDLogger.info("成功=====>\(success)")
+                case let .failure(failure):
+                    BDLogger.info("失败=====>\(failure)")
+                }
+            }
+            break
         default:
             break
         }

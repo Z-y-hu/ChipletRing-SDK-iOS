@@ -606,6 +606,45 @@ pod 'ApolloOTA', :path => 'Frameworks/ApolloSDK'
 	            }
 ```
 
+#### 2.13.1 获取全部历史记录
+接口说明：实时下发指令到蓝牙设备，并将设备内全部数据同步到SDK中，并逐条插入到数据库中，获取到的每一条数据都会通过progressBlock闭包回调。
+接口说明：参数说明：targetTimeInterval:目标时间戳，单位秒，默认为0即同步全部数据，有值时同步该时间戳之后的数据
+
+```swift
+BDLogger.debug("目标时间戳：\(date.timeIntervalSince1970)")
+RingManager.shared.readAllHistoryDatas(targetTimeInterval:date.timeIntervalSince1970) { progress, dataModel in
+    	BDLogger.info("进度 =====>\(progress)==\(dataModel)")
+    } 
+	resultBlock: { res in
+    	switch res {
+        case let .success(success):
+            BDLogger.info("成功====>\(success)")
+        case let .failure(failure):
+            BDLogger.info("失败====>\(failure)")
+        }
+	}
+```
+
+#### 2.13.2 获取未上传历史记录
+接口说明：实时下发指令到蓝牙设备，并将设备内未上传的数据同步到SDK中，并逐条插入到数据库中，获取到的每一条数据都会通过progressBlock闭包回调。
+接口说明：参数说明：targetTimeInterval:目标时间戳，单位秒，默认为0即同步全部未上传的数据，不为0时则同步该时间戳之后的数据
+
+```swift
+BDLogger.debug("目标时间戳：\(date.timeIntervalSince1970)")
+RingManager.shared.readNewHistoryDatas(targetTimeInterval:date.timeIntervalSince1970) { progress, dataModel in
+    BDLogger.info("进度 =====>\(progress)==\(dataModel)")
+} resultBlock: { res in
+    switch res {
+    case let .success(success):
+        BDLogger.info("成功====>\(success)")
+    case let .failure(failure):
+        BDLogger.info("失败====>\(failure)")
+    }
+}
+```
+
+
+
 注意事项：调用此接口 ，需保证与戒指处于连接状态
 该API获取设备历史数据，每获取到一条历史信息，都会通过progressBlock闭包回调，并在获取全部结果之后，通过resultBlock回调最终结果。其中dataModel为设备数据模型，相关属性如下：
 
@@ -629,14 +668,15 @@ pod 'ApolloOTA', :path => 'Frameworks/ApolloSDK'
 	    public var mentalStress = 0
 	    // 温度，有符号的
 	    public var temp:Float = 0
-	    // 运动激烈程度 0: 静止  0x65:运动
-	    public var isRunning = false
+	    // 运动激烈程度 
+	    public var isRunning : Int = 0
 	    // 睡眠类型 0：无效 1：清醒 2：浅睡 3：深睡 4.眼动期
 	    public var sleepType = 0
 	    // RR 期间个数
 	    public var RRNums = 0
 	    // RR数组
-	    public var rrs:[Int] = []28.	}
+	    public var rrs:Data()?
+		}
 ```
 
 返回值：state为ReadDataResult枚举类型，值有:
@@ -867,6 +907,47 @@ pod 'ApolloOTA', :path => 'Frameworks/ApolloSDK'
 注意事项：调用此接口 ，需保证与戒指处于连接状态
 参数说明：无
 返回值：无
+
+#### 2.24 PPG测量（寿世）
+接口说明： PPG测量，根据配置返回波形、进度数据
+接口声明：
+
+```swift
+/// PPG采集（ShouShi）
+/// - Parameter collectionTime: 采集时间，默认30(0为一值采集)
+/// - Parameter waveformConfiguration: 波形配置0：不上传，1：上传（默认配置为1，不建议修改）
+/// - Parameter progressconfiguration: 进度配置0：不上传，1：上传（默认配置为1，不建议修改）
+/// - Parameter waveformSetting：波形配置0：125hz 绿色，1：25hz 绿色+红外(暂不支持)
+/// - CallBack  progressBlock : 进度回调
+/// - CallBack  tableBlock : 波形回调
+/// - CallBack  resultBlock : 结果回调
+RingManager.shared.get_PPG_ShouShi(collectionTime: 30, waveformConfiguration: 1, progressConfiguration: 1, waveformSetting: 0, progressBlock: { progress in
+    BDLogger.info("进度：\(progress)")
+}, tableBlock: { index, value, data in
+    BDLogger.info("波形：\(index) \(value) \(data)")
+}, resultBlock: { result in
+    BDLogger.info("结果：\(result)")
+})
+```
+注意事项：调用此接口 ，需保证与戒指处于连接状态
+
+#### 2.24 PPG测量停止（寿世）
+接口说明： PPG测量停止
+接口声明：
+```swift
+/// PPG采集停止（ShouShi）
+/// - CallBack  resultBlock : 结果回调
+RingManager.shared.stop_PPG_ShouShi { result in
+    switch result {
+    case let .success(success):
+        BDLogger.info("成功=====>\(success)")
+    case let .failure(failure):
+        BDLogger.info("失败=====>\(failure)")
+    }
+}
+```
+注意事项：调用此接口 ，需保证与戒指处于连接状态
+
 
 ### 3、	固件升级（OTA）
 

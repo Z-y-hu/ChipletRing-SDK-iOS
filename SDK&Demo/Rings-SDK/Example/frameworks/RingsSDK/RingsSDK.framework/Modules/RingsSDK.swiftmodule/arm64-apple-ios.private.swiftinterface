@@ -694,8 +694,8 @@ extension RingsSDK.RingManager {
   public func readSteps(resultBlock: @escaping (Swift.Result<Swift.Int, RingsSDK.ReadError>) -> Swift.Void)
   public func clearSteps(resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)
   public func readDatas(progressBlock: @escaping (Swift.Double, RingsSDK.RingDataModel) -> Swift.Void, resultBlock: @escaping (Swift.Result<RingsSDK.ReadDataResult, RingsSDK.ReadError>) -> Swift.Void)
-  public func readAllHistoryDatas(progressBlock: @escaping (Swift.Double, RingsSDK.RingDataModel) -> Swift.Void, resultBlock: @escaping (Swift.Result<RingsSDK.ReadDataResult, RingsSDK.ReadError>) -> Swift.Void)
-  public func readNewHistoryDatas(progressBlock: @escaping (Swift.Double, RingsSDK.RingDataModel) -> Swift.Void, resultBlock: @escaping (Swift.Result<RingsSDK.ReadDataResult, RingsSDK.ReadError>) -> Swift.Void)
+  public func readAllHistoryDatas(targetTimeInterval: Foundation.TimeInterval = 0, progressBlock: @escaping (Swift.Double, RingsSDK.RingDataModel) -> Swift.Void, resultBlock: @escaping (Swift.Result<RingsSDK.ReadDataResult, RingsSDK.ReadError>) -> Swift.Void)
+  public func readNewHistoryDatas(targetTimeInterval: Foundation.TimeInterval = 0, progressBlock: @escaping (Swift.Double, RingsSDK.RingDataModel) -> Swift.Void, resultBlock: @escaping (Swift.Result<RingsSDK.ReadDataResult, RingsSDK.ReadError>) -> Swift.Void)
   public func readHeartRate(progressBlock: @escaping (Swift.Double) -> Swift.Void, isOpenWave: Swift.Bool = false, tableBlock: @escaping (Swift.Int, Swift.Int, [Swift.UInt8]) -> Swift.Void, inHeartBlock: @escaping (Swift.Int) -> Swift.Void, resultBlock: @escaping (Swift.Result<Swift.Int, RingsSDK.ReadError>) -> Swift.Void)
   public func readHeartRateWithRR(rrTime: Swift.UInt8, progressBlock: @escaping (Swift.Double) -> Swift.Void, inHeartRRBlock: @escaping (Swift.Int, Swift.Int, [Swift.Int]) -> Swift.Void, inHeartBlock: @escaping (Swift.Int) -> Swift.Void, resultBlock: @escaping (Swift.Result<Swift.Int, RingsSDK.ReadError>) -> Swift.Void)
   public func readO2(progressBlock: @escaping (Swift.Double) -> Swift.Void, isOpenWave: Swift.Bool = false, tableBlock: @escaping (Swift.Int, Swift.Int, [Swift.UInt8]) -> Swift.Void, resultBlock: @escaping (Swift.Result<Swift.Int, RingsSDK.ReadError>) -> Swift.Void)
@@ -714,6 +714,8 @@ extension RingsSDK.RingManager {
   public func readBluetoothName(resultBlock: @escaping (Swift.Result<Swift.String, RingsSDK.ReadError>) -> Swift.Void)
   public func stopHeartRote(resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)
   public func stopOxygenTest(resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)
+  public func get_PPG_ShouShi(collectionTime: Swift.Int = 30, waveformConfiguration: Swift.Int = 1, progressConfiguration: Swift.Int = 1, waveformSetting: Swift.Int = 0, progressBlock: @escaping (Swift.Double) -> Swift.Void, tableBlock: @escaping (Swift.Int, Swift.Int, [Swift.Int]) -> Swift.Void, resultBlock: @escaping (Swift.Result<Swift.Int, RingsSDK.ReadError>) -> Swift.Void)
+  public func stop_PPG_ShouShi(resultBlock: @escaping (Swift.Result<Swift.Bool, RingsSDK.ReadError>) -> Swift.Void)
 }
 extension RingsSDK.RingManager {
   public func startOTA(_ fileUrl: Foundation.URL, handle: ((RingsSDK.OTAStatus) -> Swift.Void)?)
@@ -1801,10 +1803,10 @@ extension Foundation.FileManager {
   @objc final public var hrv: Swift.Int
   @objc final public var mentalStress: Swift.Int
   @objc final public var temp: Swift.Float
-  @objc final public var isRunning: Swift.Bool
+  @objc final public var isRunning: Swift.Int
   @objc final public var sleepType: Swift.Int
   @objc final public var RRNums: Swift.Int
-  @objc final public var rrs: [Swift.Int]
+  @objc final public var rrs: Foundation.Data?
   @objc override dynamic public init()
   @objc public init(bytes: [Swift.UInt8])
   @objc override final public var description: Swift.String {
@@ -3091,6 +3093,7 @@ open class FileDestination : RingsSDK.BaseDestination {
   public func getLatestObject() -> RingsSDK.RingDataModel?
   @discardableResult
   public func deleteAll() -> Swift.Bool
+  public func addRRsColumnIfNeeded()
   @objc deinit
 }
 extension RingsSDK.RelativeFormatterLanguage : Swift.Equatable {}
